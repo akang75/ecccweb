@@ -10,14 +10,18 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
-var app_Logincomponent_1 = require("./app.Logincomponent");
 var app_Welcomecomponent_1 = require("./app.Welcomecomponent");
 var app_DefaultComponent_1 = require("./app.DefaultComponent");
 var languagenav_component_1 = require("./Components/languagenav.component");
 var topnav_component_1 = require("./Components/topnav.component");
 var language_service_1 = require("./Services/language.service");
+var home_component_1 = require("./Components/HomePage/home.component");
+var goldenverse_component_1 = require("./Components/HomePage/goldenverse.component");
+var http_1 = require("@angular/http");
+var jsonload_service_1 = require("./Services/jsonload.service");
 var appRoutes = [
-    { path: 'Login', component: app_Logincomponent_1.LoginComponent },
+    { path: '', component: home_component_1.HomeComponent },
+    { path: 'Home', component: home_component_1.HomeComponent },
     { path: 'Welcome', component: app_Welcomecomponent_1.WelcomeComponent }
 ];
 var AppModule = /** @class */ (function () {
@@ -25,10 +29,10 @@ var AppModule = /** @class */ (function () {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, router_1.RouterModule.forRoot(appRoutes)],
-            declarations: [app_component_1.AppComponent, app_Logincomponent_1.LoginComponent, app_Welcomecomponent_1.WelcomeComponent, app_DefaultComponent_1.DefaultComponent, languagenav_component_1.LanguageNavComponent, topnav_component_1.TopNavComponent],
+            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, router_1.RouterModule.forRoot(appRoutes)],
+            declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, goldenverse_component_1.GlodenVerseComponent, app_Welcomecomponent_1.WelcomeComponent, app_DefaultComponent_1.DefaultComponent, languagenav_component_1.LanguageNavComponent, topnav_component_1.TopNavComponent],
             bootstrap: [app_component_1.AppComponent],
-            providers: [language_service_1.LanguageService],
+            providers: [language_service_1.LanguageService, jsonload_service_1.JsonLoadService],
         })
     ], AppModule);
     return AppModule;

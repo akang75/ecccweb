@@ -19,13 +19,13 @@ var TopNavComponent = /** @class */ (function () {
         this.languageService = languageService;
         globalvarible_1.GlobalVariable.language;
         this.menuitems = new Map();
-        this.menuitems.set(globalvarible_2.Language.English, { items: [{ title: 'Home', routerLink: 'Login' },
+        this.menuitems.set(globalvarible_2.Language.English, { items: [{ title: 'Home', routerLink: 'Home' },
                 { title: 'About Us', routerLink: 'Welcome' },
                 { title: 'Worship', routerLink: 'Default' }] });
-        this.menuitems.set(globalvarible_2.Language.SimplifyChinese, { items: [{ title: '主页', routerLink: 'Login' },
+        this.menuitems.set(globalvarible_2.Language.SimplifyChinese, { items: [{ title: '主页', routerLink: 'Home' },
                 { title: '简介', routerLink: 'Welcome' },
                 { title: '崇拜', routerLink: 'Default' }] });
-        this.menuitems.set(globalvarible_2.Language.TranditionalChinese, { items: [{ title: '主頁', routerLink: 'Login' },
+        this.menuitems.set(globalvarible_2.Language.TranditionalChinese, { items: [{ title: '主頁', routerLink: 'Home' },
                 { title: '簡介', routerLink: 'Welcome' },
                 { title: '崇拜', routerLink: 'Default' }] });
         this.SetCurrentItemByLanguage(globalvarible_2.Language[globalvarible_1.GlobalVariable.language]);

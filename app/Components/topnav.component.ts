@@ -26,13 +26,13 @@ export class TopNavComponent{
     {
         GlobalVariable.language
         this.menuitems = new Map<Language, MenuItems>();
-        this.menuitems.set(Language.English, {items : [{title:'Home', routerLink:'Login'},
+        this.menuitems.set(Language.English, {items : [{title:'Home', routerLink:'Home'},
                                                        {title:'About Us',routerLink:'Welcome'},
                                                        {title:'Worship',routerLink:'Default'}]});
-        this.menuitems.set(Language.SimplifyChinese, {items : [{title:'主页', routerLink:'Login'},
+        this.menuitems.set(Language.SimplifyChinese, {items : [{title:'主页', routerLink:'Home'},
                                                        {title:'简介',routerLink:'Welcome'},
                                                        {title:'崇拜',routerLink:'Default'}]});
-        this.menuitems.set(Language.TranditionalChinese, {items : [{title:'主頁', routerLink:'Login'},
+        this.menuitems.set(Language.TranditionalChinese, {items : [{title:'主頁', routerLink:'Home'},
                                                        {title:'簡介',routerLink:'Welcome'},
                                                        {title:'崇拜',routerLink:'Default'}]});
         this.SetCurrentItemByLanguage(Language[GlobalVariable.language]);

@@ -7,3 +7,9 @@ export enum Language{
 export class GlobalVariable{
     static language : Language
 }
+
+export interface IVerseItem{
+    text:string;
+    from:string;
+    version:string;  
+}

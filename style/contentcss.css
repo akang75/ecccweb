@@ -1,0 +1,83 @@
+
+/* #BFE4FF, #769FD5, #9CCBFF*/
+div#ContentBoxGray,div#ContentBox{
+    border:1px solid #9CCBFF; 
+    min-width:200px;
+    margin:0 0px 10px 0px;
+    padding:0;
+    position:relative;
+	height: auto;
+	/*background:#fff;*//* adding background color here breaks IE6--it hides a floating image in this box. */
+	top:0
+  }
+  div#ContentBoxGray{
+	background:#eeeeee;
+}
+    
+  div#BoxContent{
+  	margin:10px 5px 10px 5px;
+	}
+	
+#BoxContent p {
+	margin:5px;
+}
+
+.english {
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	font-size:small;
+}
+
+
+#BoxContent h4 {
+	margin:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:small;
+	font-weight:normal;
+}
+
+#ContentBoxGray h3,#ContentBox h3  { 
+  font:  normal .9em;
+  height:1em;
+  padding:2px 1.5em 4px .5em;
+  color:#00487D; /*#fff;*/
+  background:#9CCBFF; /*url(/images/cbHead01.jpg);*/
+  margin:0 0px 0 0px;
+  border:0 none;
+  display:block;
+}
+
+#content h3 img {
+  margin:-3px 0;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+#wrapper {
+  margin: 0 15px;
+  padding: 0;
+}
+#left {
+  float: left;
+  width: 250px;
+}
+#right {
+  float: right;
+  width: 250px;
+}
+#center {
+  margin-left: 260px;
+  margin-right: 260px;
+}
+
+#clear {
+  clear: both;
+}
+
+/* Removes default top margin from left/right column paragraphs in Mozilla */
+div > p {
+  margin-top: 0;
+}
