@@ -19,6 +19,7 @@ var home_component_1 = require("./Components/HomePage/home.component");
 var goldenverse_component_1 = require("./Components/HomePage/goldenverse.component");
 var http_1 = require("@angular/http");
 var jsonload_service_1 = require("./Services/jsonload.service");
+var latestinfo_component_1 = require("./Components/HomePage/latestinfo.component");
 var appRoutes = [
     { path: '', component: home_component_1.HomeComponent },
     { path: 'Home', component: home_component_1.HomeComponent },
@@ -30,7 +31,7 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, http_1.HttpModule, router_1.RouterModule.forRoot(appRoutes)],
-            declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, goldenverse_component_1.GlodenVerseComponent, app_Welcomecomponent_1.WelcomeComponent, app_DefaultComponent_1.DefaultComponent, languagenav_component_1.LanguageNavComponent, topnav_component_1.TopNavComponent],
+            declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, goldenverse_component_1.GlodenVerseComponent, app_Welcomecomponent_1.WelcomeComponent, app_DefaultComponent_1.DefaultComponent, languagenav_component_1.LanguageNavComponent, topnav_component_1.TopNavComponent, latestinfo_component_1.LatestInfoComponent],
             bootstrap: [app_component_1.AppComponent],
             providers: [language_service_1.LanguageService, jsonload_service_1.JsonLoadService],
         })

@@ -33,9 +33,9 @@ export class LanguageNavComponent{
         GlobalVariable.language = Language.TranditionalChinese;
 
     }
-    setLanguage(language:string)
+    setLanguage(language:Language)
     {
-        GlobalVariable.language = Language[language]; 
+        GlobalVariable.language = language; 
         
         for(let lan of this.languages)
         {

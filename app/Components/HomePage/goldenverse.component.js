@@ -29,26 +29,24 @@ var webpartbase_1 = require("../../Shared/webpartbase");
 var GlodenVerseComponent = /** @class */ (function (_super) {
     __extends(GlodenVerseComponent, _super);
     function GlodenVerseComponent(languageService, jsonLoadService) {
-        var _this = _super.call(this) || this;
-        _this.languageService = languageService;
+        var _this = _super.call(this, languageService) || this;
         _this.jsonLoadService = jsonLoadService;
-        _this.fileNames = new Map();
-        _this.fileNames.set(globalvarible_2.Language.English, "../../files/Goden_Verse_en.json");
-        _this.fileNames.set(globalvarible_2.Language.SimplifyChinese, "../../files/Goden_Verse_si.json");
-        _this.fileNames.set(globalvarible_2.Language.TranditionalChinese, "../../files/Goden_Verse_tr.json");
-        _this.titles.set(globalvarible_2.Language.English, "Daily Verse");
-        _this.titles.set(globalvarible_2.Language.SimplifyChinese, "每日金句");
-        _this.titles.set(globalvarible_2.Language.TranditionalChinese, "每日金句");
-        _this.LoadVerse(globalvarible_2.Language[globalvarible_1.GlobalVariable.language]);
-        _this.subscription = languageService.currentLanguage$.subscribe(function (language) {
-            _this.LoadVerse(language);
-        });
         return _this;
     }
-    GlodenVerseComponent.prototype.LoadVerse = function (language) {
+    GlodenVerseComponent.prototype.ngOnInit = function () {
+        this.fileNames = new Map();
+        this.fileNames.set(globalvarible_2.Language.English, "../../files/Goden_Verse_en.json");
+        this.fileNames.set(globalvarible_2.Language.SimplifyChinese, "../../files/Goden_Verse_si.json");
+        this.fileNames.set(globalvarible_2.Language.TranditionalChinese, "../../files/Goden_Verse_tr.json");
+        this.titles.set(globalvarible_2.Language.English, "Daily Verse");
+        this.titles.set(globalvarible_2.Language.SimplifyChinese, "每日金句");
+        this.titles.set(globalvarible_2.Language.TranditionalChinese, "每日金句");
+        this.LoadData();
+    };
+    GlodenVerseComponent.prototype.LoadData = function () {
         var _this = this;
-        var fileName = this.fileNames.get(globalvarible_2.Language[language]);
-        this.title = this.titles.get(globalvarible_2.Language[language]);
+        var fileName = this.fileNames.get(globalvarible_1.GlobalVariable.language);
+        this.title = this.titles.get(globalvarible_1.GlobalVariable.language);
         this.jsonLoadService.getVerseItems(fileName).subscribe(function (response) {
             _this.versedata = response;
             var index = Math.floor(Math.random() * (_this.versedata.length + 1));

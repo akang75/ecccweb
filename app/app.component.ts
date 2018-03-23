@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
               <div class="header">
                 <h1>
                   <a href="http://www.eccc.net">
-                    <img src="images/header.png" alt="HTML tutorial" style="width:600px;height:60px;border:0;">
+                    <img src="images/header.png" alt="HTML tutorial" style="width:30%;height:60px;border:0;">
                   </a>
                 </h1>
               </div>

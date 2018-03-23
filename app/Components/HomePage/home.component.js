@@ -13,7 +13,7 @@ var HomeComponent = /** @class */ (function () {
     HomeComponent = __decorate([
         core_1.Component({
             selector: 'home',
-            template: "<link href=\"../style/maincss.css\" rel=\"stylesheet\">\n            \n           <goldenverse></goldenverse>\n    "
+            template: "<link href=\"../style/maincss.css\" rel=\"stylesheet\">\n           <goldenverse></goldenverse>\n           <latestinfo></latestinfo>\n    "
         })
     ], HomeComponent);
     return HomeComponent;

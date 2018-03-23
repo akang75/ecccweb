@@ -13,7 +13,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n            <html> \n              <div class=\"header\">\n                <h1>\n                  <a href=\"http://www.eccc.net\">\n                    <img src=\"images/header.png\" alt=\"HTML tutorial\" style=\"width:600px;height:60px;border:0;\">\n                  </a>\n                </h1>\n              </div>\n              <langaguenav></langaguenav>\n              <topmenu></topmenu>\n            </html>\n  "
+            template: "\n            <html> \n              <div class=\"header\">\n                <h1>\n                  <a href=\"http://www.eccc.net\">\n                    <img src=\"images/header.png\" alt=\"HTML tutorial\" style=\"width:30%;height:60px;border:0;\">\n                  </a>\n                </h1>\n              </div>\n              <langaguenav></langaguenav>\n              <topmenu></topmenu>\n            </html>\n  "
         })
     ], AppComponent);
     return AppComponent;

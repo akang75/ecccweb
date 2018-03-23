@@ -28,7 +28,7 @@ var LanguageNavComponent = /** @class */ (function () {
         globalvarible_2.GlobalVariable.language = globalvarible_1.Language.TranditionalChinese;
     }
     LanguageNavComponent.prototype.setLanguage = function (language) {
-        globalvarible_2.GlobalVariable.language = globalvarible_1.Language[language];
+        globalvarible_2.GlobalVariable.language = language;
         for (var _i = 0, _a = this.languages; _i < _a.length; _i++) {
             var lan = _a[_i];
             lan.hidden = false;

@@ -3,6 +3,7 @@ import {GlobalVariable} from '../Shared/globalvarible';
 import {Language} from '../Shared/globalvarible';
 import {LanguageService} from '../Services/language.service'
 import {Subscription} from 'rxjs/Subscription';
+import { WebPartBase } from '../Shared/webpartbase';
 
 @Component({
     selector: 'topmenu',
@@ -17,14 +18,18 @@ import {Subscription} from 'rxjs/Subscription';
       
     <router-outlet></router-outlet>`
 })
-export class TopNavComponent{
+export class TopNavComponent extends WebPartBase{
     menuitems : Map<Language, MenuItems>
     currentItems : MenuItems
     subscription: Subscription;
 
-    constructor(private languageService : LanguageService)
+    constructor(languageService : LanguageService)
     {
-        GlobalVariable.language
+        super(languageService);
+    }
+
+    ngOnInit()
+    {
         this.menuitems = new Map<Language, MenuItems>();
         this.menuitems.set(Language.English, {items : [{title:'Home', routerLink:'Home'},
                                                        {title:'About Us',routerLink:'Welcome'},
@@ -35,18 +40,12 @@ export class TopNavComponent{
         this.menuitems.set(Language.TranditionalChinese, {items : [{title:'主頁', routerLink:'Home'},
                                                        {title:'簡介',routerLink:'Welcome'},
                                                        {title:'崇拜',routerLink:'Default'}]});
-        this.SetCurrentItemByLanguage(Language[GlobalVariable.language]);
-
-        this.subscription = languageService.currentLanguage$.subscribe(
-            language => {
-                this.SetCurrentItemByLanguage(language);
-        });
-
+        this.LoadData()
     }
 
-    SetCurrentItemByLanguage(language:string)
+    LoadData()
     {
-        this.currentItems =  this.menuitems.get(Language[language]);
+        this.currentItems =  this.menuitems.get(GlobalVariable.language);
     }
 
 }

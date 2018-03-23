@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {GlobalVariable, IVerseItem} from '../../Shared/globalvarible';
 import {Language} from '../../Shared/globalvarible';
 import {LanguageService} from '../../Services/language.service'
-import {Subscription} from 'rxjs/Subscription';
 import {JsonLoadService } from '../../Services/jsonload.service';
 import 'rxjs/add/operator/map';
 import { WebPartBase } from '../../Shared/webpartbase';
@@ -20,13 +19,16 @@ import { WebPartBase } from '../../Shared/webpartbase';
 })
 export class GlodenVerseComponent extends WebPartBase {
     fileNames : Map<Language, string>;
-    subscription: Subscription;
     versedata: IVerseItem[];
     verse:string;
     source:string;
 
-    constructor(private languageService : LanguageService, private jsonLoadService : JsonLoadService){
-        super();
+    constructor(languageService : LanguageService, private jsonLoadService : JsonLoadService){
+        super(languageService);
+    }
+    
+    ngOnInit()
+    {
         this.fileNames = new Map<Language, string>();
         this.fileNames.set(Language.English, "../../files/Goden_Verse_en.json");
         this.fileNames.set(Language.SimplifyChinese, "../../files/Goden_Verse_si.json");
@@ -36,17 +38,13 @@ export class GlodenVerseComponent extends WebPartBase {
         this.titles.set(Language.SimplifyChinese, "每日金句");
         this.titles.set(Language.TranditionalChinese, "每日金句");
 
-        this.LoadVerse(Language[GlobalVariable.language]);
-        this.subscription = languageService.currentLanguage$.subscribe(
-            language => {
-                this.LoadVerse(language);
-        });
+        this.LoadData();
     }
 
-    LoadVerse(language:string)
+    LoadData()
     {
-        var fileName = this.fileNames.get(Language[language]);
-        this.title = this.titles.get(Language[language]);
+        var fileName = this.fileNames.get(GlobalVariable.language);
+        this.title = this.titles.get(GlobalVariable.language);
         this.jsonLoadService.getVerseItems(fileName).subscribe(response => {
             this.versedata = response;
             var index = Math.floor(Math.random() * (this.versedata.length + 1));

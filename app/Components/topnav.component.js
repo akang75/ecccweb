@@ -1,4 +1,14 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -13,11 +23,13 @@ var core_1 = require("@angular/core");
 var globalvarible_1 = require("../Shared/globalvarible");
 var globalvarible_2 = require("../Shared/globalvarible");
 var language_service_1 = require("../Services/language.service");
-var TopNavComponent = /** @class */ (function () {
+var webpartbase_1 = require("../Shared/webpartbase");
+var TopNavComponent = /** @class */ (function (_super) {
+    __extends(TopNavComponent, _super);
     function TopNavComponent(languageService) {
-        var _this = this;
-        this.languageService = languageService;
-        globalvarible_1.GlobalVariable.language;
+        return _super.call(this, languageService) || this;
+    }
+    TopNavComponent.prototype.ngOnInit = function () {
         this.menuitems = new Map();
         this.menuitems.set(globalvarible_2.Language.English, { items: [{ title: 'Home', routerLink: 'Home' },
                 { title: 'About Us', routerLink: 'Welcome' },
@@ -28,13 +40,10 @@ var TopNavComponent = /** @class */ (function () {
         this.menuitems.set(globalvarible_2.Language.TranditionalChinese, { items: [{ title: '主頁', routerLink: 'Home' },
                 { title: '簡介', routerLink: 'Welcome' },
                 { title: '崇拜', routerLink: 'Default' }] });
-        this.SetCurrentItemByLanguage(globalvarible_2.Language[globalvarible_1.GlobalVariable.language]);
-        this.subscription = languageService.currentLanguage$.subscribe(function (language) {
-            _this.SetCurrentItemByLanguage(language);
-        });
-    }
-    TopNavComponent.prototype.SetCurrentItemByLanguage = function (language) {
-        this.currentItems = this.menuitems.get(globalvarible_2.Language[language]);
+        this.LoadData();
+    };
+    TopNavComponent.prototype.LoadData = function () {
+        this.currentItems = this.menuitems.get(globalvarible_1.GlobalVariable.language);
     };
     TopNavComponent = __decorate([
         core_1.Component({
@@ -44,7 +53,7 @@ var TopNavComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [language_service_1.LanguageService])
     ], TopNavComponent);
     return TopNavComponent;
-}());
+}(webpartbase_1.WebPartBase));
 exports.TopNavComponent = TopNavComponent;
 var MenuItems = /** @class */ (function () {
     function MenuItems() {

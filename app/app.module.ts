@@ -11,6 +11,7 @@ import {HomeComponent} from './Components/HomePage/home.component'
 import {GlodenVerseComponent} from './Components/HomePage/goldenverse.component'
 import { HttpModule, Http } from '@angular/http';
 import { JsonLoadService } from './Services/jsonload.service';
+import { LatestInfoComponent } from './Components/HomePage/latestinfo.component';
 
 const appRoutes: Routes = [ 
   {path: '', component: HomeComponent},
@@ -20,7 +21,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports:      [ BrowserModule, HttpModule, RouterModule.forRoot(appRoutes)],
-  declarations: [ AppComponent,HomeComponent,GlodenVerseComponent, WelcomeComponent,DefaultComponent,LanguageNavComponent,TopNavComponent],
+  declarations: [ AppComponent,HomeComponent,GlodenVerseComponent, WelcomeComponent,DefaultComponent,LanguageNavComponent,TopNavComponent, LatestInfoComponent],
   bootstrap:    [ AppComponent ],  
   providers:    [LanguageService, JsonLoadService],
 })

@@ -6,6 +6,8 @@ export enum Language{
 
 export class GlobalVariable{
     static language : Language
+    static morningfile : string
+    static afternoonfile : string
 }
 
 export interface IVerseItem{
