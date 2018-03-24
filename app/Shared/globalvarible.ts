@@ -5,7 +5,7 @@ export enum Language{
 }
 
 export class GlobalVariable{
-    static language : Language
+    static language : Language = Language.TranditionalChinese;
     static morningfile : string
     static afternoonfile : string
 }

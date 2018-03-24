@@ -1,12 +1,22 @@
 import {Component} from '@angular/core';
+import { WebPartBase } from '../../Shared/webpartbase';
+import {LanguageService} from '../../Services/language.service'
+import {Language, GlobalVariable} from '../../Shared/globalvarible';
 
 @Component({
-    selector: 'home',
-    template: `<link href="../style/maincss.css" rel="stylesheet">
-           <goldenverse></goldenverse>
-           <latestinfo></latestinfo>
-    `
+    moduleId: module.id,
+    selector: 'message',
+    templateUrl: "home.component.html",
 })
-export class HomeComponent{
+export class HomeComponent extends WebPartBase{
 
+    constructor(languageService : LanguageService)
+    {
+        super(languageService);
+    }
+
+    ngOnInit()
+    {
+        console.log(this.isenglish);
+    }
 }

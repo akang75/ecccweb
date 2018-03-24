@@ -21,7 +21,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var globalvarible_1 = require("../Shared/globalvarible");
-var globalvarible_2 = require("../Shared/globalvarible");
 var language_service_1 = require("../Services/language.service");
 var webpartbase_1 = require("../Shared/webpartbase");
 var TopNavComponent = /** @class */ (function (_super) {
@@ -31,15 +30,21 @@ var TopNavComponent = /** @class */ (function (_super) {
     }
     TopNavComponent.prototype.ngOnInit = function () {
         this.menuitems = new Map();
-        this.menuitems.set(globalvarible_2.Language.English, { items: [{ title: 'Home', routerLink: 'Home' },
-                { title: 'About Us', routerLink: 'Welcome' },
-                { title: 'Worship', routerLink: 'Default' }] });
-        this.menuitems.set(globalvarible_2.Language.SimplifyChinese, { items: [{ title: '主页', routerLink: 'Home' },
-                { title: '简介', routerLink: 'Welcome' },
-                { title: '崇拜', routerLink: 'Default' }] });
-        this.menuitems.set(globalvarible_2.Language.TranditionalChinese, { items: [{ title: '主頁', routerLink: 'Home' },
-                { title: '簡介', routerLink: 'Welcome' },
-                { title: '崇拜', routerLink: 'Default' }] });
+        this.menuitems.set(globalvarible_1.Language.English, { items: [{ title: 'Home', routerLink: 'Home', icon: "pe-7s-home" },
+                { title: 'Meeting', routerLink: 'Meeting', icon: "pe-7s-home" },
+                { title: 'Message', routerLink: 'Message', icon: "pe-7s-sun" },
+                { title: 'About Us', routerLink: 'Welcome', icon: "pe-7s-home" },
+                { title: 'Worship', routerLink: 'Default', icon: "pe-7s-home" }] });
+        this.menuitems.set(globalvarible_1.Language.SimplifyChinese, { items: [{ title: '主页', routerLink: 'Home', icon: "pe-7s-home" },
+                { title: '聚会', routerLink: 'Meeting', icon: "pe-7s-home" },
+                { title: '主日信息', routerLink: 'Message', icon: "pe-7s-home" },
+                { title: '简介', routerLink: 'Welcome', icon: "pe-7s-home" },
+                { title: '崇拜', routerLink: 'Default', icon: "pe-7s-home" }] });
+        this.menuitems.set(globalvarible_1.Language.TranditionalChinese, { items: [{ title: '主頁', routerLink: 'Home', icon: "pe-7s-home" },
+                { title: '聚會', routerLink: 'Meeting', icon: "pe-7s-home" },
+                { title: '主日信息', routerLink: 'Message', icon: "pe-7s-home" },
+                { title: '簡介', routerLink: 'Welcome', icon: "pe-7s-home" },
+                { title: '崇拜', routerLink: 'Default', icon: "pe-7s-home" }] });
         this.LoadData();
     };
     TopNavComponent.prototype.LoadData = function () {
@@ -48,7 +53,7 @@ var TopNavComponent = /** @class */ (function (_super) {
     TopNavComponent = __decorate([
         core_1.Component({
             selector: 'topmenu',
-            template: "<link href=\"../style/maincss.css\" rel=\"stylesheet\">\n           <ul id=\"horizontal-list\">\n                <nav>\n                    <li *ngFor=\"let item of currentItems.items\">\n                       <a routerLinkActive=\"active\" routerLink=\"{{item.routerLink}}\">{{item.title}}</a>\n                    </li>\n                </nav>\n            </ul>\n      \n    <router-outlet></router-outlet>"
+            template: "<div class=\"sidebar-wrapper\">\n           <ul class=\"nav responsive-nav\">\n                <li routerLinkActive=\"active\" *ngFor=\"let menuItem of currentItems.items\">\n                    <a  [routerLink]=\"[menuItem.routerLink]\">\n                    <i class=\"{{menuItem.icon}}\"></i>\n                    <p>{{menuItem.title}}</p>\n                    </a>\n                </li>\n            </ul>\n            </div>\n      \n    "
         }),
         __metadata("design:paramtypes", [language_service_1.LanguageService])
     ], TopNavComponent);

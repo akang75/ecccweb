@@ -1,0 +1,144 @@
+<div class="main-content">
+        <div class="container-fluid">
+ {{isenglish}}
+            <div class="row" *ngIf="isenglish">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="header">
+                            <h4 class="title">Meeting Schedule</h4>
+                            <p class="category">All Church Meeting</p>
+                        </div>
+                        <div class="content table-responsive table-full-width">
+                              <table class="table table-hover table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th *ngFor="let cell of churchenglish.headerRow">{{ cell }}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let row of churchenglish.dataRows">
+                                            <td *ngFor="let cell of row">{{cell}}</td>
+                                        </tr>
+                                    </tbody>
+                              </table>
+    
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="header">
+                            <h4 class="title">Bible Study</h4>
+                        </div>
+                        <div class="content table-responsive table-full-width">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th *ngFor="let cell of fellowshipenglish.headerRow">{{ cell }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let row of fellowshipenglish.dataRows">
+                                        <td *ngFor="let cell of row">{{cell}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" *ngIf="issimplifychinese">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">聚会时间</h4>
+                                <p class="category">全教會聚會</p>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                  <table class="table table-hover table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th *ngFor="let cell of churchsimplifychinese.headerRow">{{ cell }}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let row of churchsimplifychinese.dataRows">
+                                                <td *ngFor="let cell of row">{{cell}}</td>
+                                            </tr>
+                                        </tbody>
+                                  </table>
+        
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">查经班</h4>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th *ngFor="let cell of fellowshipsimplifychinese.headerRow">{{ cell }}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let row of fellowshipsimplifychinese.dataRows">
+                                            <td *ngFor="let cell of row">{{cell}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="row" *ngIf="istraditionalchinese">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">聚會時間</h4>
+                                <p class="category">全教會聚會</p>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                  <table class="table table-hover table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th *ngFor="let cell of churchtraditionalchinese.headerRow">{{ cell }}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let row of churchtraditionalchinese.dataRows">
+                                                <td *ngFor="let cell of row">{{cell}}</td>
+                                            </tr>
+                                        </tbody>
+                                  </table>
+        
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">查经班</h4>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th *ngFor="let cell of fellowshiptraditionalchinese.headerRow">{{ cell }}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let row of fellowshiptraditionalchinese.dataRows">
+                                            <td *ngFor="let cell of row">{{cell}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    

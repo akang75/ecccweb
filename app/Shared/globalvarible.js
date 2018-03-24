@@ -9,6 +9,7 @@ var Language;
 var GlobalVariable = /** @class */ (function () {
     function GlobalVariable() {
     }
+    GlobalVariable.language = Language.TranditionalChinese;
     return GlobalVariable;
 }());
 exports.GlobalVariable = GlobalVariable;
