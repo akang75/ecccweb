@@ -13,18 +13,25 @@ var app_component_1 = require("./app.component");
 var topnav_component_1 = require("./Components/topnav.component");
 var language_service_1 = require("./Services/language.service");
 var message_component_1 = require("./Components/MessagePage/message.component");
-var goldenverse_component_1 = require("./Components/MessagePage/goldenverse.component");
 var http_1 = require("@angular/http");
 var jsonload_service_1 = require("./Services/jsonload.service");
-var latestinfo_component_1 = require("./Components/MessagePage/latestinfo.component");
 var home_component_1 = require("./Components/HomePage/home.component");
 var meeting_component_1 = require("./Components/MeetingPage/meeting.component");
 var navbar_component_1 = require("./Components/navbar.component");
+var photogallery_component_1 = require("./Components/HomePage/photogallery.component");
+var about_component_1 = require("./Components/AboutPage/about.component");
+var godword_component_1 = require("./Components/GodWordPage/godword.component");
+var gospel_component_1 = require("./Components/GospelPage/gospel.component");
+var fellowship_component_1 = require("./Components/FellowshipPage/fellowship.component");
 var appRoutes = [
     { path: '', component: home_component_1.HomeComponent },
     { path: 'Home', component: home_component_1.HomeComponent },
     { path: 'Meeting', component: meeting_component_1.MeetingComponent },
-    { path: 'Message', component: message_component_1.MessageComponent }
+    { path: 'About', component: about_component_1.AboutComponent },
+    { path: 'Message', component: message_component_1.MessageComponent },
+    { path: 'GodWord', component: godword_component_1.GodWordComponent },
+    { path: 'Gospel', component: gospel_component_1.GospelComponent },
+    { path: 'Fellowship', component: fellowship_component_1.FellowshipComponent }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -32,7 +39,18 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, http_1.HttpModule, router_1.RouterModule.forRoot(appRoutes)],
-            declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, meeting_component_1.MeetingComponent, navbar_component_1.NavbarComponent, message_component_1.MessageComponent, goldenverse_component_1.GlodenVerseComponent, topnav_component_1.TopNavComponent, latestinfo_component_1.LatestInfoComponent],
+            declarations: [app_component_1.AppComponent,
+                home_component_1.HomeComponent,
+                meeting_component_1.MeetingComponent,
+                navbar_component_1.NavbarComponent,
+                message_component_1.MessageComponent,
+                topnav_component_1.TopNavComponent,
+                photogallery_component_1.PhotoGalleryComponent,
+                about_component_1.AboutComponent,
+                godword_component_1.GodWordComponent,
+                gospel_component_1.GospelComponent,
+                fellowship_component_1.FellowshipComponent
+            ],
             bootstrap: [app_component_1.AppComponent],
             providers: [language_service_1.LanguageService, jsonload_service_1.JsonLoadService],
         })

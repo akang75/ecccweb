@@ -1,27 +1,17 @@
 <div class="main-content" >
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="card">
+                        <div class="content" >
+                                <imagegallery></imagegallery>
+                        </div>
                         <div class="content" *ngIf="isenglish">
-                            <div class="alert alert-info">
-                                <span><b>Church History</b></span>
-                            </div>
-                            <p>Eastside Christian Community Church, located in Bellevue (east of Seattle), was established in 1985. We believe in the Bible and Jesus Christ. Our church does not belong to any denomination and our church members come from different backgrounds. We welcome you to join us to worship and fellowship together so that we may spread the salvation of Jesus Christ.</p>
-    
-                            <div class="alert alert-info">
-                                <span><b>Church Vision</b></span>
-                            </div>
-                            <p>Christ is All and in all. He is also head of the body, the church.</p>
-                            <p>“Put on the new self who is being renewed to a true knowledge according to the image of the One who created him 11 a renewal in which there is no distinction between Greek and Jew, circumcised and uncircumcised, barbarian, Scythian, slave and freeman, but Christ is all, and in all.” (Colossians 3:10-11)</p>
-                            <p>“For He delivered us from the domain of darkness, and transferred us to the kingdom of His beloved Son, 14 in whom we have redemption, the forgiveness of sins. 15 And He is the image of the invisible God, the first-born of all creation. 16 For by Him all things were created, both in the heavens and on earth, visible and invisible, whether thrones or dominions or rulers or authorities -- all things have been created by Him and for Him. 17 And He is before all things, and in Him all things hold together. 18 He is also head of the body, the church; and He is the beginning, the first-born from the dead; so that He Himself might come to have first place in everything.” (NAS - Colossians 1:13-18)</p>
-                            <div class="alert alert-info">
-                                <span><b>Church Mission</b></span>
-                            </div>
-                            <p>Inward: Come to Me, Take My yoke upon you, and Learn from Me.
-                            <br> “Come to Me, all who are weary and heavy-laden, and I will give you rest. 29 Take My yoke upon you, and learn from Me, for I am gentle and humble in heart; and you shall find rest for your souls. 30 For My yoke is easy, and My load is light.” (NAS - Matthew 11:28-30)</p>
-                            <p>Outward: Go therefore and make disciples of all the nations.
-                            <br>“And Jesus came up and spoke to them, saying, "All authority has been given to Me in heaven and on earth. 19 "Go therefore and make disciples of all the nations, baptizing them in the name of the Father and the Son and the Holy Spirit, 20 teaching them to observe all that I commanded you; and lo, I am with you always, even to the end of the age."”(NAS - Matthew 28:18-20)</p>
+                            <h3>Welcome to ECCC website</h3>
+                            <p>3615 164th Place SE, Bellevue, WA 98008, USA</p>
+                            <p>Tel: 425-747-0889</p>
+                            <br>
+                            <p><b><i>Daily Verse: {{verseItem.text}}  - {{verseItem.from}}</i></b></p>
                             <div class="alert alert-info">
                                 <span><b>Our Faith</b></span>
                             </div>
@@ -38,24 +28,11 @@
                             <p>10.We believe in the bodily resurrection of the just and the unjust; the everlasting blessedness of the saved, and the everlasting punishment of the lost.</p>
                         </div> 
                         <div class="content" *ngIf="issimplifychinese">
-                            <div class="alert alert-info">
-                                <span><b>教会的历史</b></span>
-                            </div>
-                            <p>东区基督教会位於西雅图东边的 Bellevue﻿,成立於一九八五年,是根据圣经,信仰耶稣基督的教会。我们的教会不属於任何宗派,信徒来自不同背景.欢迎各地的弟兄姐妹和朋友一起来敬拜神,参加主内团契,同心广布基督救恩.</p>
-        
-                            <div class="alert alert-info">
-                                <span><b>教会的异象</b></span>
-                            </div>
-                            <p>唯有基督是一切又在一切之内。他也是教会全体之首。</p>
-                            <p>“穿上了新人，这新人在知识上渐渐更新,正如造他主的形像。在此并不分希利尼人;犹太人;受割礼的;未受割礼的;化外人;西古提人;为奴的;自主的;惟有基督是包括一切,又住在各人之内。” (歌罗西书 3:10-11)</p>
-                            <p>“他救了我们脱离黑暗的权势,把我们迁到他爱子的国里.我们在爱子里得蒙救赎, 罪过得以赦免.爱子是那不能看见之神的像,是首生的,在一切被造的以先。因为万有都是靠他造的,无论是天上的,地上的,能看见的,不能看见的,或是有位的,主治的,执政的,掌权的,一概都是藉着他造的,又是为他造的。他在万有之先,万有也靠他而立。他也是教会全体之首。他是元始,是从死里首先复生的,使他可已在凡事上居首位。” (歌罗西书 1:13-18)</p>
-                            <div class="alert alert-info">
-                                <span><b>教会的使命</b></span>
-                            </div>
-                            <p>对内：到耶稣这里来,你们当负我的轭,学我的样式。
-                            <br>“凡劳苦担重担的人,可以到我这里来,我就使你们得安息.我心里柔和谦卑,你们当负我的轭,学我的样式,这样,你们心里就必得享安息.因为我的轭是容易的,我的担子是轻省的。” (马太福音 11:28-30)</p>
-                            <p>对外：所以你们要去,使万民作我的门徒。
-                            <br>“耶稣进前来对他们说,'天上,地下所有的权柄,都赐给我了。所以你们要去,使万民作我的门徒,奉父子圣灵的名,给他们施洗归於父子圣灵的名,凡我所吩咐你们的,都教训他们遵守,我就常与你们同在,直到世界的末了。’” (马太福音 28:18-20)</p>
+                            <h3>欢迎来到东区基督教会</h3>
+                            <p>3615 164th Place SE, Bellevue, WA 98008, USA</p>
+                            <p>Tel: 425-747-0889</p>
+                            <br>
+                            <p><b><i>每日金句: {{verseItem.text}}  - {{verseItem.from}}</i></b></p>
                             <div class="alert alert-info">
                                 <span><b>我们的信仰</b></span>
                             </div>
@@ -72,24 +49,11 @@
                             <p>10.我们笃信义者及不义者的身体复活。得救者享永福，沉沦者受永刑</p>
                         </div> 
                         <div class="content" *ngIf="istraditionalchinese">
-                            <div class="alert alert-info">
-                                <span><b>教會的歷史</b></span>
-                            </div>
-                            <p>東區基督教會位於西雅圖東邊的Bellevue,成立於一九八五年,是根據聖經,信仰耶穌基督的教會。我們的教會不屬於任何宗派,信徒來自不同背景.歡迎各地的弟兄姐妹和朋友一起來敬拜神,參加主內團契,同心廣佈基督救恩.</p>
-                                
-                            <div class="alert alert-info">
-                                <span><b>教會的異象</b></span>
-                            </div>
-                            <p>唯有基督是一切又在一切之內。他也是教會全體之首。</p>
-                            <p>“穿上了新人，這新人在知識上漸漸更新,正如造他主的形像。在此並不分希利尼人;猶太人;受割禮的;未受割禮的;化外人;西古提人;為奴的;自主的;惟有基督是包括一切,又住在各人之內。” (歌羅西書 3:10-11)</p>
-                            <p>“他救了我們脫離黑暗的權勢,把我們遷到他愛子的國裡.我們在愛子裡得蒙救贖, 罪過得以赦免.愛子是那不能看見之神的像,是首生的,在一切被造的以先。因為萬有都是靠他造的,無論是天上的,地上的,能看見的,不能看見的,或是有位的,主治的,執政的,掌權的,一概都是藉著他造的,又是為他造的。他在萬有之先,萬有也靠他而立。他也是教會全體之首。他是元始,是從死裡首先復生的,使他可已在凡事上居首位。” (歌羅西書 1:13-18)</p>
-                            <div class="alert alert-info">
-                                <span><b>教會的使命</b></span>
-                            </div>
-                            <p>對內：到耶穌這裡來,你們當負我的軛,學我的樣式。
-                            <br>“凡勞苦擔重擔的人,可以到我這裡來,我就使你們得安息.我心裡柔和謙卑,你們當負我的軛,學我的樣式,這樣,你們心裡就必得享安息.因為我的軛是容易的,我的擔子是輕省的。” (馬太福音 11:28-30)</p>
-                            <p>對外：所以你們要去,使萬民作我的門徒
-                            <br>“耶穌進前來對他們說,‘天上,地下所有的權柄,都賜給我了。所以你們要去,使萬民作我的門徒,奉父子聖靈的名,給他們施洗歸於父子聖靈的名,凡我所吩咐你們的,都教訓他們遵守,我就常與你們同在,直到世界的末了。’” (馬太福音 28:18-20)</p>
+                            <h3>歡迎來到東區基督教會</h3>
+                            <p>3615 164th Place SE, Bellevue, WA 98008, USA</p>
+                            <p>Tel: 425-747-0889</p>
+                            <br>
+                            <p><b><i>每日金句: {{verseItem.text}}  - {{verseItem.from}}</i></b></p>
                             <div class="alert alert-info">
                                 <span><b>我們的信仰</b></span>
                             </div>

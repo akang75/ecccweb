@@ -31,20 +31,26 @@ var TopNavComponent = /** @class */ (function (_super) {
     TopNavComponent.prototype.ngOnInit = function () {
         this.menuitems = new Map();
         this.menuitems.set(globalvarible_1.Language.English, { items: [{ title: 'Home', routerLink: 'Home', icon: "pe-7s-home" },
-                { title: 'Meeting', routerLink: 'Meeting', icon: "pe-7s-home" },
-                { title: 'Message', routerLink: 'Message', icon: "pe-7s-sun" },
-                { title: 'About Us', routerLink: 'Welcome', icon: "pe-7s-home" },
-                { title: 'Worship', routerLink: 'Default', icon: "pe-7s-home" }] });
+                { title: 'Meeting', routerLink: 'Meeting', icon: "pe-7s-date" },
+                { title: 'Message', routerLink: 'Message', icon: "pe-7s-pin" },
+                { title: 'God\'s Word', routerLink: 'GodWord', icon: "pe-7s-film" },
+                { title: 'Gospel', routerLink: 'Gospel', icon: "pe-7s-speaker" },
+                { title: 'Fellowship', routerLink: 'Fellowship', icon: "pe-7s-users" },
+                { title: 'About Us', routerLink: 'About', icon: "pe-7s-info" }] });
         this.menuitems.set(globalvarible_1.Language.SimplifyChinese, { items: [{ title: '主页', routerLink: 'Home', icon: "pe-7s-home" },
-                { title: '聚会', routerLink: 'Meeting', icon: "pe-7s-home" },
-                { title: '主日信息', routerLink: 'Message', icon: "pe-7s-home" },
-                { title: '简介', routerLink: 'Welcome', icon: "pe-7s-home" },
-                { title: '崇拜', routerLink: 'Default', icon: "pe-7s-home" }] });
+                { title: '聚会', routerLink: 'Meeting', icon: "pe-7s-date" },
+                { title: '主日信息', routerLink: 'Message', icon: "pe-7s-pin" },
+                { title: '主的话', routerLink: 'GodWord', icon: "pe-7s-film" },
+                { title: '福音', routerLink: 'Gospel', icon: "pe-7s-speaker" },
+                { title: '肢體生活', routerLink: 'Fellowship', icon: "pe-7s-users" },
+                { title: '简介', routerLink: 'About', icon: "pe-7s-info" }] });
         this.menuitems.set(globalvarible_1.Language.TranditionalChinese, { items: [{ title: '主頁', routerLink: 'Home', icon: "pe-7s-home" },
-                { title: '聚會', routerLink: 'Meeting', icon: "pe-7s-home" },
-                { title: '主日信息', routerLink: 'Message', icon: "pe-7s-home" },
-                { title: '簡介', routerLink: 'Welcome', icon: "pe-7s-home" },
-                { title: '崇拜', routerLink: 'Default', icon: "pe-7s-home" }] });
+                { title: '聚會', routerLink: 'Meeting', icon: "pe-7s-date" },
+                { title: '主日信息', routerLink: 'Message', icon: "pe-7s-pin" },
+                { title: '主的話', routerLink: 'GodWord', icon: "pe-7s-film" },
+                { title: '福音', routerLink: 'Gospel', icon: "pe-7s-speaker" },
+                { title: '肢體生活', routerLink: 'Fellowship', icon: "pe-7s-users" },
+                { title: '簡介', routerLink: 'About', icon: "pe-7s-info" }] });
         this.LoadData();
     };
     TopNavComponent.prototype.LoadData = function () {
@@ -53,7 +59,7 @@ var TopNavComponent = /** @class */ (function (_super) {
     TopNavComponent = __decorate([
         core_1.Component({
             selector: 'topmenu',
-            template: "<div class=\"sidebar-wrapper\">\n           <ul class=\"nav responsive-nav\">\n                <li routerLinkActive=\"active\" *ngFor=\"let menuItem of currentItems.items\">\n                    <a  [routerLink]=\"[menuItem.routerLink]\">\n                    <i class=\"{{menuItem.icon}}\"></i>\n                    <p>{{menuItem.title}}</p>\n                    </a>\n                </li>\n            </ul>\n            </div>\n      \n    "
+            template: "<div class=\"sidebar-wrapper\">\n            <div class=\"logo\">\n                <a href=\"http://www.eccc.net:81\" class=\"simple-text\">\n                        Welcome to ECCC!\n                </a>\n            </div>\n           <ul class=\"nav responsive-nav\">\n                <li routerLinkActive=\"active\" *ngFor=\"let menuItem of currentItems.items\">\n                    <a  [routerLink]=\"[menuItem.routerLink]\">\n                    <i class=\"{{menuItem.icon}}\"></i>\n                    <p>{{menuItem.title}}</p>\n                    </a>\n                </li>\n            </ul>\n            </div>\n      \n    "
         }),
         __metadata("design:paramtypes", [language_service_1.LanguageService])
     ], TopNavComponent);

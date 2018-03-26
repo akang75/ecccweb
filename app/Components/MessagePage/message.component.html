@@ -1,0 +1,42 @@
+<div class="main-content" >
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="content">
+                            <div class="alert alert-info">
+                                <span><b>{{currentmessagetitle}} {{date}}</b></span>
+                            </div>
+                            <div *ngFor="let info of currentinformation">
+                                    <p>{{info.title}}</p>
+                                    <p><a href="{{info.filepath}}">
+                                    <img alt="watch online" src="/images/icon/video.png" style="border:0" width="16" height="16"/> Video({{info.length}})</a>
+                            </div>
+                            <div class="alert alert-info">
+                                    <span><b>{{currentbullitentitle}} {{date}}</b></span>
+                            </div>
+                            <table class="table">
+                                <tbody>
+                                    <tr *ngFor="let bulliten of currentBulliten">
+                                        <td>
+                                            <i class="fa fa-circle text-info"></i> {{bulliten}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div> 
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="alert alert-info">
+                                        <span><b>{{currenthistorytitle}}</b></span>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+            </div>
+        </div>
+</div>
