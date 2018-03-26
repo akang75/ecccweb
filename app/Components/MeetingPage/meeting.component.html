@@ -1,11 +1,11 @@
 <div class="main-content">
         <div class="container-fluid">
             <div class="row" *ngIf="isenglish">
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <div class="card">
                         <div class="header">
                             <h4 class="title">Meeting Schedule</h4>
-                            <p class="category">All Church Meeting</p>
+                            <p class="category">All Church Meeting, Chinese/Englisht, Location: Fellowship Center</p>
                         </div>
                         <div class="content table-responsive table-full-width">
                               <table class="table table-hover table-striped">
@@ -47,11 +47,11 @@
                 </div>
             </div>
             <div class="row" *ngIf="issimplifychinese">
-                    <div class="col-md-8">
+                    <div class="col-md-6">
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">聚会时间</h4>
-                                <p class="category">全教會聚會</p>
+                                <p class="category">全教会聚会, 中英文双语, 地点：团契中心</p>
                             </div>
                             <div class="content table-responsive table-full-width">
                                   <table class="table table-hover table-striped">
@@ -69,6 +69,29 @@
         
                             </div>
                         </div>
+                    </div>
+                    <div class="col-md-6">
+                            <div class="card">
+                                <div class="header">
+                                    <h4 class="title">主日学</h4>
+                                    <p class="category">时间：主日 12:30 PM - 1:15 PM 地点：团契中心</p>
+                                </div>
+                                <div class="content table-responsive table-full-width">
+                                      <table class="table table-hover table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th *ngFor="let cell of classsimplifychinese.headerRow">{{ cell }}</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let row of classsimplifychinese.dataRows">
+                                                    <td *ngFor="let cell of row">{{cell}}</td>
+                                                </tr>
+                                            </tbody>
+                                      </table>
+            
+                                </div>
+                            </div>
                     </div>
                     <div class="col-md-8">
                         <div class="card">
@@ -93,11 +116,11 @@
                     </div>
             </div>
             <div class="row" *ngIf="istraditionalchinese">
-                    <div class="col-md-8">
+                    <div class="col-md-6">
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">聚會時間</h4>
-                                <p class="category">全教會聚會</p>
+                                <p class="category">全教會聚會, 中英文雙語,地點：團契中心</p>
                             </div>
                             <div class="content table-responsive table-full-width">
                                   <table class="table table-hover table-striped">
@@ -115,6 +138,29 @@
         
                             </div>
                         </div>
+                    </div>
+                    <div class="col-md-6">
+                            <div class="card">
+                                <div class="header">
+                                    <h4 class="title">主日學</h4>
+                                    <p class="category">時間：主日 12:30 PM - 1:15 PM 地点：团契中心</p>
+                                </div>
+                                <div class="content table-responsive table-full-width">
+                                      <table class="table table-hover table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th *ngFor="let cell of classtraditionalchinese.headerRow">{{ cell }}</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let row of classtraditionalchinese.dataRows">
+                                                    <td *ngFor="let cell of row">{{cell}}</td>
+                                                </tr>
+                                            </tbody>
+                                      </table>
+            
+                                </div>
+                            </div>
                     </div>
                     <div class="col-md-8">
                         <div class="card">

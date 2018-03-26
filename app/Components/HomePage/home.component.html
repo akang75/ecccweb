@@ -3,15 +3,26 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
+                        <div class="content" *ngIf="isenglish">
+                            <h3>Welcome to ECCC website</h3>
+                            <p>Address：3615 164th Place SE, Bellevue, WA 98008, USA. Tel: 425-747-0889</p>
+                            <p>Latest Message: The King’s Calling -To be the disciple of the Lord - Brother Jonathan Pon <a href="#"><img class="fontsizebutton" src="images/play.png"/></a></p>
+                        </div>
+                        <div class="content" *ngIf="issimplifychinese">
+                            <h3>欢迎来到东区基督教会</h3>
+                            <p>地址：3615 164th Place SE, Bellevue, WA 98008, USA. 电话: 425-747-0889</p>
+                            <p>最新信息：主的呼召-作主的门徒 (1) - 彭动平弟兄 <a href="#"><img class="fontsizebutton" src="images/play.png"/></a></p>
+                        </div>
+                        <div class="content" *ngIf="istraditionalchinese">
+                            <h3>歡迎來到東區基督教會</h3>
+                            <p>地址：3615 164th Place SE, Bellevue, WA 98008, USA. 電話: 425-747-0889</p>
+                            <p>最新信息：主的呼召-作主的門徒 (1) - 彭動平弟兄 <a href="#"><img class="fontsizebutton" src="images/play.png"/></a></p>
+                        </div>
                         <div class="content" >
                                 <imagegallery></imagegallery>
                         </div>
                         <div class="content" *ngIf="isenglish">
-                            <h3>Welcome to ECCC website</h3>
-                            <p>3615 164th Place SE, Bellevue, WA 98008, USA</p>
-                            <p>Tel: 425-747-0889</p>
-                            <br>
-                            <p><b><i>Daily Verse: {{verseItem.text}}  - {{verseItem.from}}</i></b></p>
+                            <p class="center"><b><i>Daily Verse: {{verseItem.text}}  - {{verseItem.from}}</i></b></p>
                             <div class="alert alert-info">
                                 <span><b>Our Faith</b></span>
                             </div>
@@ -28,11 +39,7 @@
                             <p>10.We believe in the bodily resurrection of the just and the unjust; the everlasting blessedness of the saved, and the everlasting punishment of the lost.</p>
                         </div> 
                         <div class="content" *ngIf="issimplifychinese">
-                            <h3>欢迎来到东区基督教会</h3>
-                            <p>3615 164th Place SE, Bellevue, WA 98008, USA</p>
-                            <p>Tel: 425-747-0889</p>
-                            <br>
-                            <p><b><i>每日金句: {{verseItem.text}}  - {{verseItem.from}}</i></b></p>
+                            <p class="center"><b><i>每日金句: {{verseItem.text}}  - {{verseItem.from}}</i></b></p>
                             <div class="alert alert-info">
                                 <span><b>我们的信仰</b></span>
                             </div>
@@ -49,11 +56,7 @@
                             <p>10.我们笃信义者及不义者的身体复活。得救者享永福，沉沦者受永刑</p>
                         </div> 
                         <div class="content" *ngIf="istraditionalchinese">
-                            <h3>歡迎來到東區基督教會</h3>
-                            <p>3615 164th Place SE, Bellevue, WA 98008, USA</p>
-                            <p>Tel: 425-747-0889</p>
-                            <br>
-                            <p><b><i>每日金句: {{verseItem.text}}  - {{verseItem.from}}</i></b></p>
+                            <p class="center"><b><i>每日金句: {{verseItem.text}}  - {{verseItem.from}}</i></b></p>
                             <div class="alert alert-info">
                                 <span><b>我們的信仰</b></span>
                             </div>
@@ -69,7 +72,7 @@
                             <p>9.我們篤信那“有福之盼望”就是救主耶穌基督在千禧年前隨時再來。</p>
                             <p>10.我們篤信義者及不義者的身體復活。得救者享永福，沉淪者受永刑。</p>
                         </div>
-                    </div>
+                </div>
             </div>
         </div>
     </div>

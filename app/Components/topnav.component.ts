@@ -50,7 +50,7 @@ export class TopNavComponent extends WebPartBase{
                                                        {title:'主日信息', routerLink:'Message', icon:"pe-7s-pin"},
                                                        {title:'主的话',routerLink:'GodWord', icon:"pe-7s-film"},
                                                        {title:'福音',routerLink:'Gospel', icon:"pe-7s-speaker"},
-                                                       {title:'肢體生活',routerLink:'Fellowship', icon:"pe-7s-users"},
+                                                       {title:'肢体生活',routerLink:'Fellowship', icon:"pe-7s-users"},
                                                        {title:'简介',routerLink:'About', icon:"pe-7s-info"}]});
 
         this.menuitems.set(Language.TranditionalChinese, {items : [{title:'主頁', routerLink:'Home', icon:"pe-7s-home"},
