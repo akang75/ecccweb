@@ -15,6 +15,7 @@ import { AboutComponent } from './Components/AboutPage/about.component';
 import { GodWordComponent } from './Components/GodWordPage/godword.component';
 import { GospelComponent } from './Components/GospelPage/gospel.component';
 import { FellowshipComponent } from './Components/FellowshipPage/fellowship.component';
+import { ArchivedMessageComponent } from './Components/MessagePage/archivedmessage';
 
 const appRoutes: Routes = [ 
   { path: '', component: HomeComponent},
@@ -39,7 +40,8 @@ const appRoutes: Routes = [
                   AboutComponent,
                   GodWordComponent,
                   GospelComponent,
-                  FellowshipComponent
+                  FellowshipComponent,
+                  ArchivedMessageComponent
                 ],
   bootstrap:    [ AppComponent ],  
   providers:    [LanguageService, JsonLoadService],

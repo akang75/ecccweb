@@ -1,19 +1,26 @@
 <div class="main-content" >
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="card">
                         <div class="content">
                             <div class="alert alert-info">
                                 <span><b>{{currentmessagetitle}} {{date}}</b></span>
                             </div>
                             <div *ngFor="let info of currentinformation">
-                                    <p>{{info.title}}</p>
-                                    <p><a href="{{info.filepath}}">
-                                    <img alt="watch online" src="/images/icon/video.png" style="border:0" width="16" height="16"/> Video({{info.length}})</a>
+                                    <p>{{info.title}}
+                                        &nbsp;<a href="{{info.filepath}}"><img alt="watch online" src="images/play.png" class="fontsizebutton"/></a>
+                                        &nbsp;<a href="{{info.filepath}}"><img alt="listen online" src="images/playaudio.png" class="fontsizebutton"/></a>
+                                    </p>
                             </div>
+                            <hr>
+                            <p>
+                                <img alt="expand" src="images/{{iconfilename}}" (click)="ToggleHistory()" class="fontsizebutton"/>
+                                <span><b>{{currenthistorytitle}}</b></span>
+                            </p>
+                            <oldmessage *ngIf="showhistoryfile"></oldmessage>
                             <div class="alert alert-info">
-                                    <span><b>{{currentbullitentitle}} {{date}}</b></span>
+                                <span><b>{{currentbullitentitle}} {{date}}</b></span>
                             </div>
                             <table class="table">
                                 <tbody>
@@ -27,16 +34,5 @@
                         </div> 
                     </div>
                 </div>
-
-                <div class="col-md-6">
-                        <div class="card">
-                            <div class="content">
-                                <div class="alert alert-info">
-                                        <span><b>{{currenthistorytitle}}</b></span>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
-            </div>
         </div>
 </div>

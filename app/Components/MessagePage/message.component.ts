@@ -9,10 +9,12 @@ import { LanguageService } from '../../Services/language.service';
     templateUrl: "message.component.html"
 })
 export class MessageComponent extends WebPartBase{
+    iconfilename: string;
     morningfile : string;
     afternoonfile : string;
     date : string;
     
+    showhistoryfile : boolean;
     messagetitles : Map<Language, string>;
     currentmessagetitle:string;
     informations : Map<Language, VideoOfWorship[]>;
@@ -38,6 +40,8 @@ export class MessageComponent extends WebPartBase{
         this.currentbullitentitle = "";
         this.currentmessagetitle = "";
         this.date = "03/018/2018";
+        this.showhistoryfile = false;
+        this.iconfilename = "expand.png";
 
         this.messagetitles = new Map<Language, string>();
         this.messagetitles.set(Language.English, "Latest Sunday Message");
@@ -86,6 +90,19 @@ export class MessageComponent extends WebPartBase{
         this.currentbullitentitle = this.bullitentitles.get(GlobalVariable.language);
 
         this.currenthistorytitle = this.historytitles.get(GlobalVariable.language);
+    }
+
+    ToggleHistory()
+    {
+        this.showhistoryfile = !this.showhistoryfile;
+        if(this.showhistoryfile)
+        {
+            this.iconfilename = "collapse.png";
+        }
+        else
+        {
+            this.iconfilename = "expand.png";
+        }
     }
 }
 

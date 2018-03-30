@@ -25,8 +25,14 @@ var JsonLoadService = /** @class */ (function () {
         }).catch(this.handleError);
     };
     //    
+    JsonLoadService.prototype.getMessageItems = function (jsonUrl) {
+        return this.http.get(jsonUrl).map(function (response) {
+            return response.json();
+        }).catch(this.handleError);
+    };
+    //    
     JsonLoadService.prototype.handleError = function (errorResponse) {
-        console.log(errorResponse.statusText);
+        console.log(errorResponse);
         return Rx_1.Observable.throw(errorResponse.json().error || "Server error");
     };
     JsonLoadService = __decorate([

@@ -34,6 +34,8 @@ var MessageComponent = /** @class */ (function (_super) {
         this.currentbullitentitle = "";
         this.currentmessagetitle = "";
         this.date = "03/018/2018";
+        this.showhistoryfile = false;
+        this.iconfilename = "expand.png";
         this.messagetitles = new Map();
         this.messagetitles.set(globalvarible_1.Language.English, "Latest Sunday Message");
         this.messagetitles.set(globalvarible_1.Language.SimplifyChinese, "最新主日信息");
@@ -73,6 +75,15 @@ var MessageComponent = /** @class */ (function (_super) {
         this.currentBulliten = this.bullitens.get(globalvarible_1.GlobalVariable.language);
         this.currentbullitentitle = this.bullitentitles.get(globalvarible_1.GlobalVariable.language);
         this.currenthistorytitle = this.historytitles.get(globalvarible_1.GlobalVariable.language);
+    };
+    MessageComponent.prototype.ToggleHistory = function () {
+        this.showhistoryfile = !this.showhistoryfile;
+        if (this.showhistoryfile) {
+            this.iconfilename = "collapse.png";
+        }
+        else {
+            this.iconfilename = "expand.png";
+        }
     };
     MessageComponent = __decorate([
         core_1.Component({

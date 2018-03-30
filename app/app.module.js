@@ -23,6 +23,7 @@ var about_component_1 = require("./Components/AboutPage/about.component");
 var godword_component_1 = require("./Components/GodWordPage/godword.component");
 var gospel_component_1 = require("./Components/GospelPage/gospel.component");
 var fellowship_component_1 = require("./Components/FellowshipPage/fellowship.component");
+var archivedmessage_1 = require("./Components/MessagePage/archivedmessage");
 var appRoutes = [
     { path: '', component: home_component_1.HomeComponent },
     { path: 'Home', component: home_component_1.HomeComponent },
@@ -49,7 +50,8 @@ var AppModule = /** @class */ (function () {
                 about_component_1.AboutComponent,
                 godword_component_1.GodWordComponent,
                 gospel_component_1.GospelComponent,
-                fellowship_component_1.FellowshipComponent
+                fellowship_component_1.FellowshipComponent,
+                archivedmessage_1.ArchivedMessageComponent
             ],
             bootstrap: [app_component_1.AppComponent],
             providers: [language_service_1.LanguageService, jsonload_service_1.JsonLoadService],
