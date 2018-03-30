@@ -8,9 +8,9 @@
                                 <span><b>{{currentmessagetitle}} {{date}}</b></span>
                             </div>
                             <div *ngFor="let info of currentinformation">
-                                    <p>{{info.title}}
-                                        &nbsp;<a href="{{info.filepath}}"><img alt="watch online" src="images/play.png" class="fontsizebutton"/></a>
-                                        &nbsp;<a href="{{info.filepath}}"><img alt="listen online" src="images/playaudio.png" class="fontsizebutton"/></a>
+                                    <p>{{info.title}} - {{info.speaker}}
+                                        &nbsp;<a href="{{info.videofilepath}}"><img alt="watch online" src="images/play.png" class="fontsizebutton"/></a>
+                                        &nbsp;<a href="{{info.auidofilepath}}"><img alt="listen online" src="images/playaudio.png" class="fontsizebutton"/></a>
                                     </p>
                             </div>
                             <hr>

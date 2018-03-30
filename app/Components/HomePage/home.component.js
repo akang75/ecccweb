@@ -29,6 +29,11 @@ var HomeComponent = /** @class */ (function (_super) {
     function HomeComponent(languageService, jsonLoadService) {
         var _this = _super.call(this, languageService) || this;
         _this.jsonLoadService = jsonLoadService;
+        _this.todaydate = "";
+        _this.morningvideofile = "";
+        _this.morningaudiofile = "";
+        _this.afternoonvideofile = "";
+        _this.afternoonaudiofile = "";
         return _this;
     }
     HomeComponent.prototype.ngOnInit = function () {
@@ -40,6 +45,14 @@ var HomeComponent = /** @class */ (function (_super) {
         this.titles.set(globalvarible_1.Language.English, "Daily Verse");
         this.titles.set(globalvarible_1.Language.SimplifyChinese, "每日金句");
         this.titles.set(globalvarible_1.Language.TranditionalChinese, "每日金句");
+        this.titleen = globalvarible_1.GlobalVariable.messagetitleen + " - " + globalvarible_1.GlobalVariable.speakeren;
+        this.titlesi = globalvarible_1.GlobalVariable.messagetitlesi + " - " + globalvarible_1.GlobalVariable.speakersi;
+        this.titletr = globalvarible_1.GlobalVariable.messagetitletr + " - " + globalvarible_1.GlobalVariable.speakertr;
+        this.todaydate = globalvarible_1.GlobalVariable.todaydate;
+        this.afternoonvideofile = "Videos/English_Worship/18/" + globalvarible_1.GlobalVariable.afternoonmessagefilename + ".mp3";
+        this.afternoonaudiofile = "/mp3/Worship/18/" + globalvarible_1.GlobalVariable.afternoonmessagefilename + ".mp3";
+        this.morningvideofile = "Videos/Chinese_Worship/18/" + globalvarible_1.GlobalVariable.morningmessagefilename + ".mp4";
+        this.morningaudiofile = "/mp3/Worship/18/" + globalvarible_1.GlobalVariable.morningmessagefilename + ".mp3";
         this.LoadData();
     };
     HomeComponent.prototype.LoadData = function () {
@@ -50,7 +63,6 @@ var HomeComponent = /** @class */ (function (_super) {
             _this.versedata = response;
             var index = Math.floor(Math.random() * (response.length + 1));
             _this.verseItem = response[index];
-            console.log(_this.verseItem);
         });
     };
     HomeComponent = __decorate([
