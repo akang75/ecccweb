@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { Language, GlobalVariable } from '../../Shared/globalvarible';
+import { Language, GlobalVariable , VideoOfWorship} from '../../Shared/globalvarible';
 import { WebPartBase } from '../../Shared/webpartbase';
 import { LanguageService } from '../../Services/language.service';
 
@@ -10,8 +10,11 @@ import { LanguageService } from '../../Services/language.service';
 })
 export class MessageComponent extends WebPartBase{
     iconfilename: string;
-    morningfile : string;
-    afternoonfile : string;
+    todaydate : string = "";
+    morningvideofile : string = "";
+    morningaudiofile : string = "";
+    afternoonvideofile : string = "";
+    afternoonaudiofile : string ="";
     date : string;
     
     showhistoryfile : boolean;
@@ -35,11 +38,14 @@ export class MessageComponent extends WebPartBase{
     
     ngOnInit()
     {
-        this.morningfile = "#";
-        this.afternoonfile = "#";
+        this.afternoonvideofile = `Videos/English_Worship/18/${GlobalVariable.afternoonmessagefilename}.mp3`;
+        this.afternoonaudiofile = `/mp3/Worship/18/${GlobalVariable.afternoonmessagefilename}.mp3`;
+        this.morningvideofile = `Videos/Chinese_Worship/18/${GlobalVariable.morningmessagefilename}.mp4`
+        this.morningaudiofile = `/mp3/Worship/18/${GlobalVariable.morningmessagefilename}.mp3`;
+       
         this.currentbullitentitle = "";
         this.currentmessagetitle = "";
-        this.date = "03/018/2018";
+        this.date = GlobalVariable.todaydate;
         this.showhistoryfile = false;
         this.iconfilename = "expand.png";
 
@@ -48,14 +54,26 @@ export class MessageComponent extends WebPartBase{
         this.messagetitles.set(Language.SimplifyChinese, "最新主日信息");
         this.messagetitles.set(Language.TranditionalChinese, "最新主日信息");
         this.informations = new Map<Language, VideoOfWorship[]>();
-        this.informations.set(Language.English, [{filepath: this.morningfile, 
-                                                    title : "The King’s Calling -To be the disciple of the Lord - Brother Jonathan Pon", 
-                                                    length:"1:0:20" },
-                                                 {filepath: this.afternoonfile, 
-                                                    title : "Heroes of Faith - Mike Wong", 
-                                                    length:"0:44:15" }]);
-        this.informations.set(Language.SimplifyChinese, [{filepath:this.morningfile, title : "主的呼召-作主的门徒 (1) - 彭动平弟兄", length:"1:0:20" }]);
-        this.informations.set(Language.TranditionalChinese, [{filepath:this.morningfile, title : "主的呼召-作主的門徒 (1) - 彭動平弟兄", length:"1:0:20" }]);
+        this.informations.set(Language.English, [{videofilepath: this.morningvideofile,
+                                                    auidofilepath : this.morningaudiofile,
+                                                    title : GlobalVariable.messagetitleen, 
+                                                    length:"1:0:20" ,
+                                                    speaker: GlobalVariable.speakeren},
+                                                 {videofilepath: this.afternoonvideofile, 
+                                                    auidofilepath : this.afternoonaudiofile,
+                                                    title : GlobalVariable.afternoonmessagetitle, 
+                                                    length:"0:44:15" ,
+                                                    speaker: GlobalVariable.afternoonspeaker}]);
+        this.informations.set(Language.SimplifyChinese, [{videofilepath:this.morningvideofile, 
+                                                        auidofilepath : this.morningaudiofile,
+                                                        title : GlobalVariable.messagetitlesi, 
+                                                        length:"1:0:20" ,
+                                                        speaker: GlobalVariable.speakersi}]);
+        this.informations.set(Language.TranditionalChinese, [{videofilepath:this.afternoonvideofile,
+                                                        auidofilepath : this.morningaudiofile, 
+                                                        title : GlobalVariable.messagetitletr, 
+                                                        length:"1:0:20" ,
+                                                        speaker: GlobalVariable.speakertr}]);
 
         this.bullitentitles = new Map<Language, string>();
         this.bullitentitles.set(Language.English, "Church News");
@@ -106,9 +124,3 @@ export class MessageComponent extends WebPartBase{
     }
 }
 
-class VideoOfWorship
-{
-    filepath : string
-    title : string
-    length : string
-}

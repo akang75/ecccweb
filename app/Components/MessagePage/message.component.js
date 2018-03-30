@@ -26,14 +26,22 @@ var language_service_1 = require("../../Services/language.service");
 var MessageComponent = /** @class */ (function (_super) {
     __extends(MessageComponent, _super);
     function MessageComponent(languageService) {
-        return _super.call(this, languageService) || this;
+        var _this = _super.call(this, languageService) || this;
+        _this.todaydate = "";
+        _this.morningvideofile = "";
+        _this.morningaudiofile = "";
+        _this.afternoonvideofile = "";
+        _this.afternoonaudiofile = "";
+        return _this;
     }
     MessageComponent.prototype.ngOnInit = function () {
-        this.morningfile = "#";
-        this.afternoonfile = "#";
+        this.afternoonvideofile = "Videos/English_Worship/18/" + globalvarible_1.GlobalVariable.afternoonmessagefilename + ".mp3";
+        this.afternoonaudiofile = "/mp3/Worship/18/" + globalvarible_1.GlobalVariable.afternoonmessagefilename + ".mp3";
+        this.morningvideofile = "Videos/Chinese_Worship/18/" + globalvarible_1.GlobalVariable.morningmessagefilename + ".mp4";
+        this.morningaudiofile = "/mp3/Worship/18/" + globalvarible_1.GlobalVariable.morningmessagefilename + ".mp3";
         this.currentbullitentitle = "";
         this.currentmessagetitle = "";
-        this.date = "03/018/2018";
+        this.date = globalvarible_1.GlobalVariable.todaydate;
         this.showhistoryfile = false;
         this.iconfilename = "expand.png";
         this.messagetitles = new Map();
@@ -41,14 +49,26 @@ var MessageComponent = /** @class */ (function (_super) {
         this.messagetitles.set(globalvarible_1.Language.SimplifyChinese, "最新主日信息");
         this.messagetitles.set(globalvarible_1.Language.TranditionalChinese, "最新主日信息");
         this.informations = new Map();
-        this.informations.set(globalvarible_1.Language.English, [{ filepath: this.morningfile,
-                title: "The King’s Calling -To be the disciple of the Lord - Brother Jonathan Pon",
-                length: "1:0:20" },
-            { filepath: this.afternoonfile,
-                title: "Heroes of Faith - Mike Wong",
-                length: "0:44:15" }]);
-        this.informations.set(globalvarible_1.Language.SimplifyChinese, [{ filepath: this.morningfile, title: "主的呼召-作主的门徒 (1) - 彭动平弟兄", length: "1:0:20" }]);
-        this.informations.set(globalvarible_1.Language.TranditionalChinese, [{ filepath: this.morningfile, title: "主的呼召-作主的門徒 (1) - 彭動平弟兄", length: "1:0:20" }]);
+        this.informations.set(globalvarible_1.Language.English, [{ videofilepath: this.morningvideofile,
+                auidofilepath: this.morningaudiofile,
+                title: globalvarible_1.GlobalVariable.messagetitleen,
+                length: "1:0:20",
+                speaker: globalvarible_1.GlobalVariable.speakeren },
+            { videofilepath: this.afternoonvideofile,
+                auidofilepath: this.afternoonaudiofile,
+                title: globalvarible_1.GlobalVariable.afternoonmessagetitle,
+                length: "0:44:15",
+                speaker: globalvarible_1.GlobalVariable.afternoonspeaker }]);
+        this.informations.set(globalvarible_1.Language.SimplifyChinese, [{ videofilepath: this.morningvideofile,
+                auidofilepath: this.morningaudiofile,
+                title: globalvarible_1.GlobalVariable.messagetitlesi,
+                length: "1:0:20",
+                speaker: globalvarible_1.GlobalVariable.speakersi }]);
+        this.informations.set(globalvarible_1.Language.TranditionalChinese, [{ videofilepath: this.afternoonvideofile,
+                auidofilepath: this.morningaudiofile,
+                title: globalvarible_1.GlobalVariable.messagetitletr,
+                length: "1:0:20",
+                speaker: globalvarible_1.GlobalVariable.speakertr }]);
         this.bullitentitles = new Map();
         this.bullitentitles.set(globalvarible_1.Language.English, "Church News");
         this.bullitentitles.set(globalvarible_1.Language.SimplifyChinese, "教会消息");
@@ -96,9 +116,4 @@ var MessageComponent = /** @class */ (function (_super) {
     return MessageComponent;
 }(webpartbase_1.WebPartBase));
 exports.MessageComponent = MessageComponent;
-var VideoOfWorship = /** @class */ (function () {
-    function VideoOfWorship() {
-    }
-    return VideoOfWorship;
-}());
 //# sourceMappingURL=message.component.js.map
