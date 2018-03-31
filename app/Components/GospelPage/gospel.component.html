@@ -1,0 +1,49 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="content">
+                        <div class="alert alert-info">
+                            <span><b>{{currentmessagetitle}} {{date}}</b></span>
+                        </div>
+                        <p>{{currentinformation.title}} - {{currentinformation.speaker}}
+                            &nbsp;<a href="{{currentinformation.videofilepath}}"><img alt="watch online" src="images/play.png" class="fontsizebutton"/></a>
+                            &nbsp;<a href="{{currentinformation.auidofilepath}}"><img alt="listen online" src="images/playaudio.png" class="fontsizebutton"/></a>
+                        </p>
+                        <hr>
+                        <p (click)="ToggleHistory()">
+                            <img alt="expand" src="images/{{iconfilename}}"  class="fontsizebutton"/>
+                            <span><b>{{currenthistorytitle}}</b></span>
+                        </p>
+                    </div> 
+                    <div class="content">
+                        <div class="alert alert-info" *ngIf="issimplifychinese">
+                            <span><b>福音活动</b></span>
+                        </div>
+                        <div class="alert alert-info" *ngIf="istraditionalchinese">
+                            <span><b>福音活動</b></span>
+                        </div>
+                        <div class="alert alert-info" *ngIf="isenglish">
+                            <span><b>Gospel Events</b></span>
+                        </div>
+                        
+                        <p *ngIf="isenglish"><i class="fa fa-circle text-info"></i>Chinatown</p>
+                        <p *ngIf="issimplifychinese"><i class="fa fa-circle text-info"></i>唐人街布道</p>
+                        <p *ngIf="istraditionalchinese"><i class="fa fa-circle text-info"></i>唐人街佈道</p>
+
+                        <div class="content all-icons">
+                            <div class="row">
+                                <div *ngFor="let picture of gospelpictures" class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                                    <div class="font-icon-detail">
+                                            <p><a href="{{picture.onedrivepath}}"><img alt="street fair thumbnail picture" src="{{picture.imagepath}}" class="imageicon" /></a></p>
+                                        <input type="text" value="{{picture.date}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

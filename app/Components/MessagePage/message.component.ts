@@ -69,7 +69,7 @@ export class MessageComponent extends WebPartBase{
                                                         title : GlobalVariable.messagetitlesi, 
                                                         length:"1:0:20" ,
                                                         speaker: GlobalVariable.speakersi}]);
-        this.informations.set(Language.TranditionalChinese, [{videofilepath:this.afternoonvideofile,
+        this.informations.set(Language.TranditionalChinese, [{videofilepath:this.morningvideofile,
                                                         auidofilepath : this.morningaudiofile, 
                                                         title : GlobalVariable.messagetitletr, 
                                                         length:"1:0:20" ,

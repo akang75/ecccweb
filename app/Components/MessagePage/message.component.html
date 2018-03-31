@@ -14,8 +14,8 @@
                                     </p>
                             </div>
                             <hr>
-                            <p>
-                                <img alt="expand" src="images/{{iconfilename}}" (click)="ToggleHistory()" class="fontsizebutton"/>
+                            <p (click)="ToggleHistory()">
+                                <img alt="expand" src="images/{{iconfilename}}"  class="fontsizebutton"/>
                                 <span><b>{{currenthistorytitle}}</b></span>
                             </p>
                             <oldmessage *ngIf="showhistoryfile"></oldmessage>

@@ -64,7 +64,7 @@ var MessageComponent = /** @class */ (function (_super) {
                 title: globalvarible_1.GlobalVariable.messagetitlesi,
                 length: "1:0:20",
                 speaker: globalvarible_1.GlobalVariable.speakersi }]);
-        this.informations.set(globalvarible_1.Language.TranditionalChinese, [{ videofilepath: this.afternoonvideofile,
+        this.informations.set(globalvarible_1.Language.TranditionalChinese, [{ videofilepath: this.morningvideofile,
                 auidofilepath: this.morningaudiofile,
                 title: globalvarible_1.GlobalVariable.messagetitletr,
                 length: "1:0:20",

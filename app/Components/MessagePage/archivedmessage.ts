@@ -7,30 +7,7 @@ import { JsonLoadService } from '../../Services/jsonload.service';
 @Component({
     moduleId: module.id,
     selector: 'oldmessage',
-    template: ` 
-                <table class="table table-hover table-striped">
-                    <tbody>
-                        <tr>
-                            <td colspan="6">
-                                <div class="search_categories">
-                                    <div class="select">
-                                        <select name="search_categories" id="search_categories" (change)="LoadDataByYear($event.target.value)">
-                                            <option *ngFor="let year of years" [value]="year" >{{year}}</option>
-                                        </select>
-                                    </div>
-                                 </div>
-                            </td>
-                        </tr>
-                        <tr *ngFor="let message of messagedata">
-                            <td>{{message.date}}</td>
-                            <td>{{message.title}}</td>
-                            <td>{{message.speaker}}</td>
-                            <td><a href="{{message.mp4file}}"><img alt="watch online" src="images/play.png" class="fontsizebutton"/></a></td>
-                            <td><a href="{{message.mp3file}}"><img alt="listen online" src="images/playaudio.png" class="fontsizebutton"/></a></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>`
+    templateUrl: "../../Shared/messagelist.html"
     
 })
 export class ArchivedMessageComponent extends WebPartBase{
