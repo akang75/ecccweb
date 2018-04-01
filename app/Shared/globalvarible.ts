@@ -60,7 +60,17 @@ export class VideoOfWorship
 
 export class ImageIcon
 {
-    imagepath: string;
-    date: string;
-    onedrivepath:string;
+    constructor(public imagepath : string, 
+                public date: string,
+                public onedrivepath:string,
+                public videofilepath:string
+                )
+    {
+
+    }
+
+    public Hasvideo()
+    {
+        return this.videofilepath != "";
+    }
 }

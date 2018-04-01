@@ -55,11 +55,12 @@ export class GospelComponent extends WebPartBase{
                                                         length:"1:0:20" ,
                                                         speaker: GlobalVariable.speakertr});
 
-        this.gospelpictures = [{imagepath:"/images/Event/080712_Street_fair_TN.jpg", date:"2008/07/12", onedrivepath:"http://sdrv.ms/QglqqE"},
-                                {imagepath:"/images/Event/100710_Street_fair_TN.jpg", date:"2010/07/10", onedrivepath:"http://sdrv.ms/QglmqE"},
-                                {imagepath:"/images/Event/1107090_Street_fair_TN.jpg", date:"2011/07/09", onedrivepath:"http://sdrv.ms/QglkPz"},
-                                {imagepath:"/images/Event/120714_street_fair_TN.jpg", date:"2012/07/14", onedrivepath:"http://sdrv.ms/QgliY2"}
-        ]
+        this.gospelpictures = [new ImageIcon("/images/Event/080712_Street_fair_TN.jpg", "2008/07/12", "http://sdrv.ms/QglqqE", ""),
+                               new ImageIcon("/images/Event/100710_Street_fair_TN.jpg", "2010/07/10", "http://sdrv.ms/QglmqE", ""),
+                               new ImageIcon("/images/Event/1107090_Street_fair_TN.jpg", "2011/07/09", "http://sdrv.ms/QglkPz", ""),
+                               new ImageIcon("/images/Event/120714_street_fair_TN.jpg", "2012/07/14", "http://sdrv.ms/QgliY2", "")
+                            ];
+        
         this.iconfilename = "expand.png";
 
         this.LoadData();

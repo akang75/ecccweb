@@ -43,6 +43,7 @@ export class ArchivedMessageComponent extends WebPartBase{
     {
         this.currentyear = year;
         var filesuffix = "_tr";
+        var foldername = "Chinese_Worship"
         if(GlobalVariable.language == Language.SimplifyChinese)
         {
             filesuffix = "_si";
@@ -50,13 +51,17 @@ export class ArchivedMessageComponent extends WebPartBase{
         else if(GlobalVariable.language == Language.English)
         {
             filesuffix = "_en";
+            foldername = "_Worship";
         }
 
         var fileName = "../../files/worships/" + year + "/" + year + filesuffix + ".json";
-        console.log(fileName);
         this.jsonLoadService.getMessageItems(fileName).subscribe(response => {
             this.messagedata = response;
-            console.log(this.messagedata);
+            this.messagedata.forEach((file)=>{
+                var twodigyear = year.substring(2);
+                file.mp3file = `mp3/Worship/${twodigyear}/${file.filename}.mp3`;
+                file.mp4file = `Videos/${foldername}/${twodigyear}/${file.filename}.mp4`;
+            })
         });
     }
 }
@@ -66,6 +71,8 @@ export class MessageItem
     title:string ;
     date:string;
     speaker: string;
-    mp4file: string;
-    mp3file: string;
+    filename: string;
+    length: string;
+    mp4file : string;
+    mp3file : string;
 }

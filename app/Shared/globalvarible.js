@@ -43,8 +43,15 @@ var VideoOfWorship = /** @class */ (function () {
 }());
 exports.VideoOfWorship = VideoOfWorship;
 var ImageIcon = /** @class */ (function () {
-    function ImageIcon() {
+    function ImageIcon(imagepath, date, onedrivepath, videofilepath) {
+        this.imagepath = imagepath;
+        this.date = date;
+        this.onedrivepath = onedrivepath;
+        this.videofilepath = videofilepath;
     }
+    ImageIcon.prototype.Hasvideo = function () {
+        return this.videofilepath != "";
+    };
     return ImageIcon;
 }());
 exports.ImageIcon = ImageIcon;

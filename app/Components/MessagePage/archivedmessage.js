@@ -49,17 +49,22 @@ var ArchivedMessageComponent = /** @class */ (function (_super) {
         var _this = this;
         this.currentyear = year;
         var filesuffix = "_tr";
+        var foldername = "Chinese_Worship";
         if (globalvarible_1.GlobalVariable.language == globalvarible_1.Language.SimplifyChinese) {
             filesuffix = "_si";
         }
         else if (globalvarible_1.GlobalVariable.language == globalvarible_1.Language.English) {
             filesuffix = "_en";
+            foldername = "_Worship";
         }
         var fileName = "../../files/worships/" + year + "/" + year + filesuffix + ".json";
-        console.log(fileName);
         this.jsonLoadService.getMessageItems(fileName).subscribe(function (response) {
             _this.messagedata = response;
-            console.log(_this.messagedata);
+            _this.messagedata.forEach(function (file) {
+                var twodigyear = year.substring(2);
+                file.mp3file = "mp3/Worship/" + twodigyear + "/" + file.filename + ".mp3";
+                file.mp4file = "Videos/" + foldername + "/" + twodigyear + "/" + file.filename + ".mp4";
+            });
         });
     };
     ArchivedMessageComponent = __decorate([

@@ -22,18 +22,24 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var webpartbase_1 = require("../../Shared/webpartbase");
 var language_service_1 = require("../../Services/language.service");
+var globalvarible_1 = require("../../Shared/globalvarible");
 var FellowshipComponent = /** @class */ (function (_super) {
     __extends(FellowshipComponent, _super);
     function FellowshipComponent(languageService) {
         return _super.call(this, languageService) || this;
     }
     FellowshipComponent.prototype.ngOnInit = function () {
+        this.Baptisms = [new globalvarible_1.ImageIcon("/images/Event/080712_Street_fair_TN.jpg", "2008/07/12", "http://sdrv.ms/QglqqE", ""),
+            new globalvarible_1.ImageIcon("/images/Event/100710_Street_fair_TN.jpg", "2010/07/10", "http://sdrv.ms/QglmqE", ""),
+            new globalvarible_1.ImageIcon("/images/Event/1107090_Street_fair_TN.jpg", "2011/07/09", "http://sdrv.ms/QglkPz", ""),
+            new globalvarible_1.ImageIcon("/images/Event/120714_street_fair_TN.jpg", "2012/07/14", "http://sdrv.ms/QgliY2", "")
+        ];
     };
     FellowshipComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'fellowship',
-            template: "placeholder",
+            templateUrl: "fellowship.component.html",
         }),
         __metadata("design:paramtypes", [language_service_1.LanguageService])
     ], FellowshipComponent);

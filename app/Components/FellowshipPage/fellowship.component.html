@@ -1,0 +1,34 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="content">
+                        <div class="alert alert-info" *ngIf="issimplifychinese">
+                            <span><b>洗礼</b></span>
+                        </div>
+                        <div class="alert alert-info" *ngIf="istraditionalchinese">
+                            <span><b>洗禮</b></span>
+                        </div>
+                        <div class="alert alert-info" *ngIf="isenglish">
+                            <span><b>Baptism</b></span>
+                        </div>
+                        
+                        <div class="content all-icons">
+                            <div class="row">
+                                <div *ngFor="let picture of Baptisms" class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                                    <div class="font-icon-detail">
+                                            <p><a href="{{picture.onedrivepath}}"><img alt="street fair thumbnail picture" src="{{picture.imagepath}}" class="imageicon" /></a></p>
+                                        <input type="text" value="{{picture.date}}">
+                                        &nbsp;<a *ngIf="picture.Hasvideo()" href="{{picture.videofilepath}}"><img alt="watch online" src="images/play.png" class="fontsizebutton"/></a>
+                           
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
