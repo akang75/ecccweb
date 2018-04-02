@@ -22,7 +22,7 @@ export class FellowshipComponent extends WebPartBase{
         this.Baptisms = [new ImageIcon("/images/Event/080712_Street_fair_TN.jpg", "2008/07/12", "http://sdrv.ms/QglqqE", ""),
                         new ImageIcon("/images/Event/100710_Street_fair_TN.jpg", "2010/07/10", "http://sdrv.ms/QglmqE", ""),
                         new ImageIcon("/images/Event/1107090_Street_fair_TN.jpg", "2011/07/09", "http://sdrv.ms/QglkPz", ""),
-                        new ImageIcon("/images/Event/120714_street_fair_TN.jpg", "2012/07/14", "http://sdrv.ms/QgliY2", "")
+                        new ImageIcon("/images/Event/120714_street_fair_TN.jpg", "2012/08/17", "http://sdrv.ms/MDoRFg", "")
                         ];
     }
 }

@@ -1,0 +1,31 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="content">
+                        <div class="alert alert-info">
+                            <span><b>{{currentbullitentitle}} {{date}}</b></span>
+                        </div>
+                        <ul>
+                            <li *ngFor="let bulliten of currentBulliten">
+                                   <p> {{bulliten}}</p>
+                            </li>
+                        </ul>
+                        <div class="alert alert-info">
+                            <span><b>{{currentprayertitle}} {{date}}</b></span>
+                        </div>
+                        <ul>
+                            <li *ngFor="let prayer of currentprayer">
+                                    <p>{{prayer}}</p>
+                            </li>
+                        </ul>
+                        <div class="alert alert-info">
+                            <span><b>{{currentgospeltitle}}</b></span>
+                        </div>
+                        <div class="letter" [innerHTML]="currentgospelletter"></div>
+                    </div> 
+                </div>
+            </div>
+    </div>
+</div>

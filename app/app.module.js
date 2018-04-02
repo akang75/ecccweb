@@ -24,15 +24,21 @@ var godword_component_1 = require("./Components/GodWordPage/godword.component");
 var gospel_component_1 = require("./Components/GospelPage/gospel.component");
 var fellowship_component_1 = require("./Components/FellowshipPage/fellowship.component");
 var archivedmessage_1 = require("./Components/MessagePage/archivedmessage");
+var churchmessage_component_1 = require("./Components/ChurchMessagePage/churchmessage.component");
+var classlist_component_1 = require("./Components/MessagePage/classlist.component");
+var videolist_component_1 = require("./Components/VideoListPage/videolist.component");
+var misctopic_component_1 = require("./Components/MessagePage/misctopic.component");
 var appRoutes = [
     { path: '', component: home_component_1.HomeComponent },
     { path: 'Home', component: home_component_1.HomeComponent },
     { path: 'Meeting', component: meeting_component_1.MeetingComponent },
+    { path: 'ChurchMessage', component: churchmessage_component_1.ChurchMessageComponent },
     { path: 'About', component: about_component_1.AboutComponent },
     { path: 'Message', component: message_component_1.MessageComponent },
     { path: 'GodWord', component: godword_component_1.GodWordComponent },
     { path: 'Gospel', component: gospel_component_1.GospelComponent },
-    { path: 'Fellowship', component: fellowship_component_1.FellowshipComponent }
+    { path: 'Fellowship', component: fellowship_component_1.FellowshipComponent },
+    { path: 'ClassVideo', component: videolist_component_1.VideoListComponent }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -51,7 +57,11 @@ var AppModule = /** @class */ (function () {
                 godword_component_1.GodWordComponent,
                 gospel_component_1.GospelComponent,
                 fellowship_component_1.FellowshipComponent,
-                archivedmessage_1.ArchivedMessageComponent
+                archivedmessage_1.ArchivedMessageComponent,
+                churchmessage_component_1.ChurchMessageComponent,
+                classlist_component_1.ClasslistComponent,
+                videolist_component_1.VideoListComponent,
+                misctopic_component_1.MisctopicComponent
             ],
             bootstrap: [app_component_1.AppComponent],
             providers: [language_service_1.LanguageService, jsonload_service_1.JsonLoadService],

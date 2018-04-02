@@ -13,24 +13,13 @@
                                         &nbsp;<a href="{{info.auidofilepath}}"><img alt="listen online" src="images/playaudio.png" class="fontsizebutton"/></a>
                                     </p>
                             </div>
-                            <hr>
                             <p (click)="ToggleHistory()">
                                 <img alt="expand" src="images/{{iconfilename}}"  class="fontsizebutton"/>
                                 <span><b>{{currenthistorytitle}}</b></span>
                             </p>
                             <oldmessage *ngIf="showhistoryfile"></oldmessage>
-                            <div class="alert alert-info">
-                                <span><b>{{currentbullitentitle}} {{date}}</b></span>
-                            </div>
-                            <table class="table">
-                                <tbody>
-                                    <tr *ngFor="let bulliten of currentBulliten">
-                                        <td>
-                                            <i class="fa fa-circle text-info"></i> {{bulliten}}
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <specialtopic></specialtopic>
+                            <classes></classes>
                         </div> 
                     </div>
                 </div>

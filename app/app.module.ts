@@ -16,16 +16,22 @@ import { GodWordComponent } from './Components/GodWordPage/godword.component';
 import { GospelComponent } from './Components/GospelPage/gospel.component';
 import { FellowshipComponent } from './Components/FellowshipPage/fellowship.component';
 import { ArchivedMessageComponent } from './Components/MessagePage/archivedmessage';
+import { ChurchMessageComponent } from './Components/ChurchMessagePage/churchmessage.component';
+import { ClasslistComponent } from './Components/MessagePage/classlist.component';
+import { VideoListComponent } from './Components/VideoListPage/videolist.component';
+import { MisctopicComponent } from './Components/MessagePage/misctopic.component';
 
 const appRoutes: Routes = [ 
   { path: '', component: HomeComponent},
   { path: 'Home', component: HomeComponent},
   { path: 'Meeting', component: MeetingComponent},
+  { path: 'ChurchMessage', component:ChurchMessageComponent},
   { path: 'About', component: AboutComponent},
   { path: 'Message', component: MessageComponent },
   { path: 'GodWord', component: GodWordComponent },
   { path: 'Gospel', component: GospelComponent},
-  { path:'Fellowship', component:FellowshipComponent}
+  { path:'Fellowship', component:FellowshipComponent},
+  { path: 'ClassVideo', component: VideoListComponent}
 ];
 
 @NgModule({
@@ -41,7 +47,11 @@ const appRoutes: Routes = [
                   GodWordComponent,
                   GospelComponent,
                   FellowshipComponent,
-                  ArchivedMessageComponent
+                  ArchivedMessageComponent,
+                  ChurchMessageComponent,
+                  ClasslistComponent,
+                  VideoListComponent,
+                  MisctopicComponent
                 ],
   bootstrap:    [ AppComponent ],  
   providers:    [LanguageService, JsonLoadService],

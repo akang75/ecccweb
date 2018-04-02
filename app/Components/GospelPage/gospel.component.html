@@ -4,20 +4,6 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="content">
-                        <div class="alert alert-info">
-                            <span><b>{{currentmessagetitle}} {{date}}</b></span>
-                        </div>
-                        <p>{{currentinformation.title}} - {{currentinformation.speaker}}
-                            &nbsp;<a href="{{currentinformation.videofilepath}}"><img alt="watch online" src="images/play.png" class="fontsizebutton"/></a>
-                            &nbsp;<a href="{{currentinformation.auidofilepath}}"><img alt="listen online" src="images/playaudio.png" class="fontsizebutton"/></a>
-                        </p>
-                        <hr>
-                        <p (click)="ToggleHistory()">
-                            <img alt="expand" src="images/{{iconfilename}}"  class="fontsizebutton"/>
-                            <span><b>{{currenthistorytitle}}</b></span>
-                        </p>
-                    </div> 
-                    <div class="content">
                         <div class="alert alert-info" *ngIf="issimplifychinese">
                             <span><b>福音活动</b></span>
                         </div>
@@ -28,9 +14,18 @@
                             <span><b>Gospel Events</b></span>
                         </div>
                         
-                        <p *ngIf="isenglish"><i class="fa fa-circle text-info"></i>Chinatown</p>
-                        <p *ngIf="issimplifychinese"><i class="fa fa-circle text-info"></i>唐人街布道</p>
-                        <p *ngIf="istraditionalchinese"><i class="fa fa-circle text-info"></i>唐人街佈道</p>
+                        <p *ngIf="isenglish">
+                            Praise the Lord. Many brothers and sisters at ECCC, by the calling of God, actively participate in the missionary work all over the world. Our local gospel ministry includes our bi-monthly Gospel Nights and Seattle Gospel Center. In addition, we have established overseas missionary fields in the Far East, South America, Taiwan, Cambodia, and India.
+                            <br/><br/><i class="fa fa-circle text-info"></i>Chinatown
+                        </p>
+                        <p *ngIf="issimplifychinese">
+                            感谢主,东区基督教会的弟兄姐妹在主的呼召下积极参与世界各地的宣教事工.除了藉在西雅图的福音中心和教会举办的福音晚会来推展本地的福音工作.并在海外建立了各个工场.如远东,巴西,印度,台湾,柬埔寨等地方.
+                            <br/><br/><i class="fa fa-circle text-info"></i>唐人街布道
+                        </p>
+                        <p *ngIf="istraditionalchinese">
+                            感謝主,東區基督教會的弟兄姐妹在主的呼召下積極參與世界各地的宣教事工.除了藉在西雅圖的福音中心和教會舉辦的福音晚會來推展本地的福音工作.並在海外建立了各個工場.如遠東,巴西,印度,台灣,柬埔寨等地方.
+                            <br/><br/><i class="fa fa-circle text-info"></i>唐人街佈道
+                        </p>
 
                         <div class="content all-icons">
                             <div class="row">

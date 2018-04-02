@@ -23,30 +23,33 @@ var core_1 = require("@angular/core");
 var webpartbase_1 = require("../../Shared/webpartbase");
 var language_service_1 = require("../../Services/language.service");
 var globalvarible_1 = require("../../Shared/globalvarible");
-var GospelComponent = /** @class */ (function (_super) {
-    __extends(GospelComponent, _super);
-    function GospelComponent(languageService) {
-        return _super.call(this, languageService) || this;
+var router_1 = require("@angular/router");
+var VideoListComponent = /** @class */ (function (_super) {
+    __extends(VideoListComponent, _super);
+    function VideoListComponent(languageService, activatedRoute) {
+        var _this = _super.call(this, languageService) || this;
+        _this.activatedRoute = activatedRoute;
+        return _this;
     }
-    GospelComponent.prototype.ngOnInit = function () {
-        this.gospelpictures = [new globalvarible_1.ImageIcon("/images/Event/080712_Street_fair_TN.jpg", "2008/07/12", "http://sdrv.ms/QglqqE", ""),
-            new globalvarible_1.ImageIcon("/images/Event/100710_Street_fair_TN.jpg", "2010/07/10", "http://sdrv.ms/QglmqE", ""),
-            new globalvarible_1.ImageIcon("/images/Event/1107090_Street_fair_TN.jpg", "2011/07/09", "http://sdrv.ms/QglkPz", ""),
-            new globalvarible_1.ImageIcon("/images/Event/120714_street_fair_TN.jpg", "2012/07/14", "http://sdrv.ms/QgliY2", "")
-        ];
+    VideoListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.paramsSub = this.activatedRoute.queryParams.subscribe(function (params) {
+            _this.source = params['source'];
+        });
         this.LoadData();
     };
-    GospelComponent.prototype.LoadData = function () {
+    VideoListComponent.prototype.LoadData = function () {
+        this.language = globalvarible_1.Language[globalvarible_1.GlobalVariable.language];
     };
-    GospelComponent = __decorate([
+    VideoListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'gospel',
-            templateUrl: "gospel.component.html",
+            selector: 'videolist',
+            template: 'Coming soon for {{source}} {{language}}',
         }),
-        __metadata("design:paramtypes", [language_service_1.LanguageService])
-    ], GospelComponent);
-    return GospelComponent;
+        __metadata("design:paramtypes", [language_service_1.LanguageService, router_1.ActivatedRoute])
+    ], VideoListComponent);
+    return VideoListComponent;
 }(webpartbase_1.WebPartBase));
-exports.GospelComponent = GospelComponent;
-//# sourceMappingURL=gospel.component.js.map
+exports.VideoListComponent = VideoListComponent;
+//# sourceMappingURL=videolist.component.js.map

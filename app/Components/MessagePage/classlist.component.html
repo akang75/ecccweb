@@ -1,0 +1,16 @@
+
+                        <div class="alert alert-info">
+                            <span><b>{{title}}</b></span>
+                        </div>
+                       
+                        <div class="content all-icons">
+                            <div class="row">
+                                <div *ngFor="let class of currentclasses" class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                                    <div class="font-icon-detail">
+                                            <p><a [routerLink]="['/ClassVideo']" [queryParams]="{source:class.routingparamenter}"><img src="images/{{class.imagepath}}" class="imagemenuicon" /></a></p>
+                                        <input type="text" value="{{class.title}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    

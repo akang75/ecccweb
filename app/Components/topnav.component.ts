@@ -39,24 +39,24 @@ export class TopNavComponent extends WebPartBase{
         this.menuitems = new Map<Language, MenuItems>();
         this.menuitems.set(Language.English, {items : [{title:'Home', routerLink:'Home', icon:"pe-7s-home"},
                                                        {title:'Meeting',routerLink:'Meeting', icon:"pe-7s-date"},
-                                                       {title:'Message', routerLink:'Message', icon:"pe-7s-pin"},
-                                                       {title:'God\'s Word',routerLink:'GodWord', icon:"pe-7s-film"},
+                                                        {title:'Church Message', routerLink:'ChurchMessage', icon:"pe-7s-pin"},
+                                                       {title:'Videos',routerLink:'Message', icon:"pe-7s-film"},
                                                        {title:'Gospel',routerLink:'Gospel', icon:"pe-7s-speaker"},
                                                        {title:'Fellowship',routerLink:'Fellowship', icon:"pe-7s-users"},
                                                        {title:'About Us',routerLink:'About', icon:"pe-7s-info"}]});
                                                        
         this.menuitems.set(Language.SimplifyChinese, {items : [{title:'主页', routerLink:'Home', icon:"pe-7s-home"},
                                                        {title:'聚会',routerLink:'Meeting', icon:"pe-7s-date"},
-                                                       {title:'主日信息', routerLink:'Message', icon:"pe-7s-pin"},
-                                                       {title:'主的话',routerLink:'GodWord', icon:"pe-7s-film"},
+                                                       {title:'教會信息', routerLink:'ChurchMessage', icon:"pe-7s-pin"},
+                                                       {title:'视频资料',routerLink:'Message', icon:"pe-7s-film"},
                                                        {title:'福音',routerLink:'Gospel', icon:"pe-7s-speaker"},
                                                        {title:'肢体生活',routerLink:'Fellowship', icon:"pe-7s-users"},
                                                        {title:'简介',routerLink:'About', icon:"pe-7s-info"}]});
 
         this.menuitems.set(Language.TranditionalChinese, {items : [{title:'主頁', routerLink:'Home', icon:"pe-7s-home"},
                                                        {title:'聚會',routerLink:'Meeting', icon:"pe-7s-date"},
-                                                       {title:'主日信息', routerLink:'Message', icon:"pe-7s-pin"},
-                                                       {title:'主的話',routerLink:'GodWord', icon:"pe-7s-film"},
+                                                       {title:'教會信息', routerLink:'ChurchMessage', icon:"pe-7s-pin"},
+                                                       {title:'視頻資料',routerLink:'Message', icon:"pe-7s-film"},
                                                        {title:'福音',routerLink:'Gospel', icon:"pe-7s-speaker"},
                                                        {title:'肢體生活',routerLink:'Fellowship', icon:"pe-7s-users"},
                                                        {title:'簡介',routerLink:'About', icon:"pe-7s-info"}]});
