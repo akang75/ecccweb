@@ -82,11 +82,8 @@ export class ArchivedMessageComponent extends WebPartBase{
         this.jsonLoadService.getMessageItems(fileName).subscribe(response => {
             this.messagedata = response;
             this.messagedata.forEach((file)=>{
-                var twodigyear = year.substring(2);
                 file.hasaudio = file.mp3file != "";
-                
                 file.hasvideo = file.mp4file != "";
-                
             })
         });
     }

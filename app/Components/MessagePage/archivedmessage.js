@@ -75,7 +75,6 @@ var ArchivedMessageComponent = /** @class */ (function (_super) {
         this.jsonLoadService.getMessageItems(fileName).subscribe(function (response) {
             _this.messagedata = response;
             _this.messagedata.forEach(function (file) {
-                var twodigyear = year.substring(2);
                 file.hasaudio = file.mp3file != "";
                 file.hasvideo = file.mp4file != "";
             });
