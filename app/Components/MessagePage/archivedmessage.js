@@ -32,38 +32,52 @@ var ArchivedMessageComponent = /** @class */ (function (_super) {
         return _this;
     }
     ArchivedMessageComponent.prototype.ngOnInit = function () {
+        this.currentyear = "2018";
+        this.LoadData();
+    };
+    ArchivedMessageComponent.prototype.LoadYearList = function () {
         var start = 2005;
+        if (this.timeofdate == "afternoon") {
+            start = 2017;
+        }
         var end = 2018;
         this.years = new Array(end - start + 1);
-        this.currentyear = end.toString();
         var i;
         for (i = start; i <= end; i++) {
             this.years[end - i] = i.toString();
         }
+    };
+    ArchivedMessageComponent.prototype.SetTimeOfDate = function (timeofdate) {
+        this.timeofdate = timeofdate;
         this.LoadData();
     };
     ArchivedMessageComponent.prototype.LoadData = function () {
+        if (globalvarible_1.GlobalVariable.language != globalvarible_1.Language.English) {
+            this.timeofdate = "morning";
+        }
+        if (this.timeofdate == "afternoon" && +this.currentyear < 2017) {
+            this.currentyear = "2018";
+        }
+        this.LoadYearList();
         this.LoadDataByYear(this.currentyear);
     };
     ArchivedMessageComponent.prototype.LoadDataByYear = function (year) {
         var _this = this;
         this.currentyear = year;
         var filesuffix = "_tr";
-        var foldername = "Chinese_Worship";
         if (globalvarible_1.GlobalVariable.language == globalvarible_1.Language.SimplifyChinese) {
             filesuffix = "_si";
         }
         else if (globalvarible_1.GlobalVariable.language == globalvarible_1.Language.English) {
             filesuffix = "_en";
-            foldername = "_Worship";
         }
-        var fileName = "../../files/worships/" + year + "/" + year + filesuffix + ".json";
+        var fileName = "../../files/worships/" + this.timeofdate + "/" + year + filesuffix + ".json";
         this.jsonLoadService.getMessageItems(fileName).subscribe(function (response) {
             _this.messagedata = response;
             _this.messagedata.forEach(function (file) {
                 var twodigyear = year.substring(2);
-                file.mp3file = "mp3/Worship/" + twodigyear + "/" + file.filename + ".mp3";
-                file.mp4file = "Videos/" + foldername + "/" + twodigyear + "/" + file.filename + ".mp4";
+                file.hasaudio = file.mp3file != "";
+                file.hasvideo = file.mp4file != "";
             });
         });
     };
@@ -71,17 +85,11 @@ var ArchivedMessageComponent = /** @class */ (function (_super) {
         core_1.Component({
             moduleId: module.id,
             selector: 'oldmessage',
-            templateUrl: "../../Shared/messagelist.html"
+            templateUrl: "archivedmessage.html"
         }),
         __metadata("design:paramtypes", [language_service_1.LanguageService, jsonload_service_1.JsonLoadService])
     ], ArchivedMessageComponent);
     return ArchivedMessageComponent;
 }(webpartbase_1.WebPartBase));
 exports.ArchivedMessageComponent = ArchivedMessageComponent;
-var MessageItem = /** @class */ (function () {
-    function MessageItem() {
-    }
-    return MessageItem;
-}());
-exports.MessageItem = MessageItem;
 //# sourceMappingURL=archivedmessage.js.map

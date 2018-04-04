@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import { WebPartBase } from '../../Shared/webpartbase';
 import {LanguageService} from '../../Services/language.service'
-import {Language, GlobalVariable, VideoOfWorship, ImageIcon} from '../../Shared/globalvarible';
+import {Language, GlobalVariable, ImageIcon} from '../../Shared/globalvarible';
 
 @Component({
     moduleId: module.id,

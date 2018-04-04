@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { Language, GlobalVariable , VideoOfWorship} from '../../Shared/globalvarible';
+import { Language, GlobalVariable} from '../../Shared/globalvarible';
 import { WebPartBase } from '../../Shared/webpartbase';
 import { LanguageService } from '../../Services/language.service';
 
@@ -23,8 +23,8 @@ export class MisctopicComponent extends WebPartBase{
     ngOnInit()
     {
         this.titles.set(Language.English, "Special Topic");
-        this.titles.set(Language.SimplifyChinese, "各類專題");
-        this.titles.set(Language.TranditionalChinese, "各类专题");
+        this.titles.set(Language.TranditionalChinese, "各類專題");
+        this.titles.set(Language.SimplifyChinese, "各类专题");
 
         this.classes = new Map<Language, ClassItem[]>();
         this.classes.set(Language.English, [{title:"Gospel Meeting", routingparamenter:"Gospel", imagepath : "topic.png"},

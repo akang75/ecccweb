@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { Language, GlobalVariable } from '../../Shared/globalvarible';
+import { Language, GlobalVariable, VideoOfWorship } from '../../Shared/globalvarible';
 import { WebPartBase } from '../../Shared/webpartbase';
 import { LanguageService } from '../../Services/language.service';
 import { JsonLoadService } from '../../Services/jsonload.service';
@@ -7,13 +7,14 @@ import { JsonLoadService } from '../../Services/jsonload.service';
 @Component({
     moduleId: module.id,
     selector: 'oldmessage',
-    templateUrl: "../../Shared/messagelist.html"
+    templateUrl: "archivedmessage.html"
     
 })
 export class ArchivedMessageComponent extends WebPartBase{
-    messagedata : MessageItem[];
+    messagedata : VideoOfWorship[];
     years : string[];
     currentyear : string;
+    timeofdate : string;
     constructor(languageService : LanguageService, private jsonLoadService : JsonLoadService)
     {
         super(languageService);
@@ -22,20 +23,45 @@ export class ArchivedMessageComponent extends WebPartBase{
 
     ngOnInit()
     {
+        this.currentyear = "2018";
+        this.LoadData();
+    }
+
+    LoadYearList()
+    {
         var start:number = 2005;
+        if(this.timeofdate == "afternoon")
+        {
+            start = 2017
+        }
         var end:number = 2018;
         this.years = new Array(end-start + 1);
-        this.currentyear = end.toString();
+        
         var i : number;
         for(i = start;i<=end;i++)
         {
             this.years[end-i] = i.toString();
         }
+    }
+
+    SetTimeOfDate(timeofdate : string)
+    {
+        this.timeofdate = timeofdate;
         this.LoadData();
     }
 
     LoadData()
     {
+        if(GlobalVariable.language != Language.English)
+        {
+            this.timeofdate = "morning";
+        }
+
+        if(this.timeofdate == "afternoon" && +this.currentyear < 2017 )
+        {
+            this.currentyear = "2018";
+        }
+        this.LoadYearList()
         this.LoadDataByYear(this.currentyear);
     }
 
@@ -43,7 +69,6 @@ export class ArchivedMessageComponent extends WebPartBase{
     {
         this.currentyear = year;
         var filesuffix = "_tr";
-        var foldername = "Chinese_Worship"
         if(GlobalVariable.language == Language.SimplifyChinese)
         {
             filesuffix = "_si";
@@ -51,28 +76,18 @@ export class ArchivedMessageComponent extends WebPartBase{
         else if(GlobalVariable.language == Language.English)
         {
             filesuffix = "_en";
-            foldername = "_Worship";
         }
 
-        var fileName = "../../files/worships/" + year + "/" + year + filesuffix + ".json";
+        var fileName = "../../files/worships/"+ this.timeofdate +"/" + year + filesuffix + ".json";
         this.jsonLoadService.getMessageItems(fileName).subscribe(response => {
             this.messagedata = response;
             this.messagedata.forEach((file)=>{
                 var twodigyear = year.substring(2);
-                file.mp3file = `mp3/Worship/${twodigyear}/${file.filename}.mp3`;
-                file.mp4file = `Videos/${foldername}/${twodigyear}/${file.filename}.mp4`;
+                file.hasaudio = file.mp3file != "";
+                
+                file.hasvideo = file.mp4file != "";
+                
             })
         });
     }
-}
-
-export class MessageItem
-{
-    title:string ;
-    date:string;
-    speaker: string;
-    filename: string;
-    length: string;
-    mp4file : string;
-    mp3file : string;
 }

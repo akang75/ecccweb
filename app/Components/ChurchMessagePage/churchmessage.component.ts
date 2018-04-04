@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { Language, GlobalVariable , VideoOfWorship} from '../../Shared/globalvarible';
+import { Language, GlobalVariable} from '../../Shared/globalvarible';
 import { WebPartBase } from '../../Shared/webpartbase';
 import { LanguageService } from '../../Services/language.service';
 

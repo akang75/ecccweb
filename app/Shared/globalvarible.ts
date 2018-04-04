@@ -61,26 +61,32 @@ export interface IVerseItem{
 
 export class VideoOfWorship
 {
-    videofilepath : string
-    auidofilepath : string
-    title : string
-    length : string
-    speaker: string
+    public hasvideo:boolean;
+    public hasaudio:boolean;
+    constructor(
+                public mp4file : string,
+                public mp3file : string,
+                public title : string,
+                public length : string,
+                public speaker: string,
+
+                )
+    {
+        this.hasaudio = this.mp3file != ""; 
+        this.hasvideo = this.mp4file != "";     
+    }
 }
 
 export class ImageIcon
 {
+    public hasvideo:boolean;
     constructor(public imagepath : string, 
                 public date: string,
                 public onedrivepath:string,
                 public videofilepath:string
                 )
     {
-
+        this.hasvideo = this.videofilepath != "";
     }
 
-    public Hasvideo()
-    {
-        return this.videofilepath != "";
-    }
 }

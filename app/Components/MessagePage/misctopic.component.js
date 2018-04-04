@@ -30,8 +30,8 @@ var MisctopicComponent = /** @class */ (function (_super) {
     }
     MisctopicComponent.prototype.ngOnInit = function () {
         this.titles.set(globalvarible_1.Language.English, "Special Topic");
-        this.titles.set(globalvarible_1.Language.SimplifyChinese, "各類專題");
-        this.titles.set(globalvarible_1.Language.TranditionalChinese, "各类专题");
+        this.titles.set(globalvarible_1.Language.TranditionalChinese, "各類專題");
+        this.titles.set(globalvarible_1.Language.SimplifyChinese, "各类专题");
         this.classes = new Map();
         this.classes.set(globalvarible_1.Language.English, [{ title: "Gospel Meeting", routingparamenter: "Gospel", imagepath: "topic.png" },
             { title: "Workship sharing", routingparamenter: "workship", imagepath: "topic.png" },

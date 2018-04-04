@@ -44,7 +44,14 @@ var GlobalVariable = /** @class */ (function () {
 }());
 exports.GlobalVariable = GlobalVariable;
 var VideoOfWorship = /** @class */ (function () {
-    function VideoOfWorship() {
+    function VideoOfWorship(mp4file, mp3file, title, length, speaker) {
+        this.mp4file = mp4file;
+        this.mp3file = mp3file;
+        this.title = title;
+        this.length = length;
+        this.speaker = speaker;
+        this.hasaudio = this.mp3file != "";
+        this.hasvideo = this.mp4file != "";
     }
     return VideoOfWorship;
 }());
@@ -55,10 +62,8 @@ var ImageIcon = /** @class */ (function () {
         this.date = date;
         this.onedrivepath = onedrivepath;
         this.videofilepath = videofilepath;
+        this.hasvideo = this.videofilepath != "";
     }
-    ImageIcon.prototype.Hasvideo = function () {
-        return this.videofilepath != "";
-    };
     return ImageIcon;
 }());
 exports.ImageIcon = ImageIcon;

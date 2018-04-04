@@ -28,17 +28,6 @@ export class MessageComponent extends WebPartBase{
     currenthistorytitle:string;
     //#endregion
 
-    //#region 福音晚會信息
-    gospeltitles: Map<Language, string>;
-    currentgospeltitle : string;
-    gospelhistorytitles : Map<Language, string>;
-    currengospelthistorytitle : string;
-    gospelinformations : Map<Language, VideoOfWorship>;
-    currentgospelinformation:VideoOfWorship;
-    gospeltogglefile : string
-    showgospelhistoryfile : boolean;
-    //#endregion
-
     constructor(languageService : LanguageService)
     {
         super(languageService);
@@ -62,26 +51,26 @@ export class MessageComponent extends WebPartBase{
         this.messagetitles.set(Language.SimplifyChinese, "最新主日信息");
         this.messagetitles.set(Language.TranditionalChinese, "最新主日信息");
         this.informations = new Map<Language, VideoOfWorship[]>();
-        this.informations.set(Language.English, [{videofilepath: this.morningvideofile,
-                                                    auidofilepath : this.morningaudiofile,
-                                                    title : GlobalVariable.messagetitleen, 
-                                                    length:"1:0:20" ,
-                                                    speaker: GlobalVariable.speakeren},
-                                                 {videofilepath: this.afternoonvideofile, 
-                                                    auidofilepath : this.afternoonaudiofile,
-                                                    title : GlobalVariable.afternoonmessagetitle, 
-                                                    length:"0:44:15" ,
-                                                    speaker: GlobalVariable.afternoonspeaker}]);
-        this.informations.set(Language.SimplifyChinese, [{videofilepath:this.morningvideofile, 
-                                                        auidofilepath : this.morningaudiofile,
-                                                        title : GlobalVariable.messagetitlesi, 
-                                                        length:"1:0:20" ,
-                                                        speaker: GlobalVariable.speakersi}]);
-        this.informations.set(Language.TranditionalChinese, [{videofilepath:this.morningvideofile,
-                                                        auidofilepath : this.morningaudiofile, 
-                                                        title : GlobalVariable.messagetitletr, 
-                                                        length:"1:0:20" ,
-                                                        speaker: GlobalVariable.speakertr}]);
+        this.informations.set(Language.English, [new VideoOfWorship(this.morningvideofile,
+                                                                    this.morningaudiofile,
+                                                                    GlobalVariable.messagetitleen, 
+                                                                    "1:0:20" ,
+                                                                    GlobalVariable.speakeren),
+                                                new VideoOfWorship(this.afternoonvideofile, 
+                                                                    this.afternoonaudiofile,
+                                                                    GlobalVariable.afternoonmessagetitle, 
+                                                                    "0:44:15" ,
+                                                                    GlobalVariable.afternoonspeaker)]);
+        this.informations.set(Language.SimplifyChinese, [new VideoOfWorship(this.morningvideofile, 
+                                                        this.morningaudiofile,
+                                                        GlobalVariable.messagetitlesi, 
+                                                        "1:0:20" ,
+                                                         GlobalVariable.speakersi)]);
+        this.informations.set(Language.TranditionalChinese, [new VideoOfWorship(this.morningvideofile,
+                                                         this.morningaudiofile, 
+                                                         GlobalVariable.messagetitletr, 
+                                                        "1:0:20" ,
+                                                         GlobalVariable.speakertr)]);
 
         
         this.historytitles = new Map<Language, string>();

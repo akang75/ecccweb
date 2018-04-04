@@ -50,26 +50,10 @@ var MessageComponent = /** @class */ (function (_super) {
         this.messagetitles.set(globalvarible_1.Language.SimplifyChinese, "最新主日信息");
         this.messagetitles.set(globalvarible_1.Language.TranditionalChinese, "最新主日信息");
         this.informations = new Map();
-        this.informations.set(globalvarible_1.Language.English, [{ videofilepath: this.morningvideofile,
-                auidofilepath: this.morningaudiofile,
-                title: globalvarible_1.GlobalVariable.messagetitleen,
-                length: "1:0:20",
-                speaker: globalvarible_1.GlobalVariable.speakeren },
-            { videofilepath: this.afternoonvideofile,
-                auidofilepath: this.afternoonaudiofile,
-                title: globalvarible_1.GlobalVariable.afternoonmessagetitle,
-                length: "0:44:15",
-                speaker: globalvarible_1.GlobalVariable.afternoonspeaker }]);
-        this.informations.set(globalvarible_1.Language.SimplifyChinese, [{ videofilepath: this.morningvideofile,
-                auidofilepath: this.morningaudiofile,
-                title: globalvarible_1.GlobalVariable.messagetitlesi,
-                length: "1:0:20",
-                speaker: globalvarible_1.GlobalVariable.speakersi }]);
-        this.informations.set(globalvarible_1.Language.TranditionalChinese, [{ videofilepath: this.morningvideofile,
-                auidofilepath: this.morningaudiofile,
-                title: globalvarible_1.GlobalVariable.messagetitletr,
-                length: "1:0:20",
-                speaker: globalvarible_1.GlobalVariable.speakertr }]);
+        this.informations.set(globalvarible_1.Language.English, [new globalvarible_1.VideoOfWorship(this.morningvideofile, this.morningaudiofile, globalvarible_1.GlobalVariable.messagetitleen, "1:0:20", globalvarible_1.GlobalVariable.speakeren),
+            new globalvarible_1.VideoOfWorship(this.afternoonvideofile, this.afternoonaudiofile, globalvarible_1.GlobalVariable.afternoonmessagetitle, "0:44:15", globalvarible_1.GlobalVariable.afternoonspeaker)]);
+        this.informations.set(globalvarible_1.Language.SimplifyChinese, [new globalvarible_1.VideoOfWorship(this.morningvideofile, this.morningaudiofile, globalvarible_1.GlobalVariable.messagetitlesi, "1:0:20", globalvarible_1.GlobalVariable.speakersi)]);
+        this.informations.set(globalvarible_1.Language.TranditionalChinese, [new globalvarible_1.VideoOfWorship(this.morningvideofile, this.morningaudiofile, globalvarible_1.GlobalVariable.messagetitletr, "1:0:20", globalvarible_1.GlobalVariable.speakertr)]);
         this.historytitles = new Map();
         this.historytitles.set(globalvarible_1.Language.English, "Archived Messages");
         this.historytitles.set(globalvarible_1.Language.SimplifyChinese, "其它主日信息");
