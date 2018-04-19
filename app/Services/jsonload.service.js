@@ -30,6 +30,11 @@ var JsonLoadService = /** @class */ (function () {
             return response.json();
         }).catch(this.handleError);
     };
+    JsonLoadService.prototype.getMessageWithNotesItems = function (jsonUrl) {
+        return this.http.get(jsonUrl).map(function (response) {
+            return response.json();
+        }).catch(this.handleError);
+    };
     //    
     JsonLoadService.prototype.handleError = function (errorResponse) {
         console.log(errorResponse);

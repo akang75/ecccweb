@@ -77,6 +77,12 @@ export class VideoOfWorship
     }
 }
 
+export class VideoItemWithNotes extends VideoOfWorship
+{
+    public noteurl:string
+    public hasnote:boolean
+}
+
 export class ImageIcon
 {
     public hasvideo:boolean;

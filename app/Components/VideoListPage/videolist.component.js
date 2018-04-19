@@ -45,48 +45,56 @@ var VideoListComponent = /** @class */ (function (_super) {
                     this.titles.set(globalvarible_1.Language.English, "Basic Truth");
                     this.titles.set(globalvarible_1.Language.SimplifyChinese, "基要真理");
                     this.titles.set(globalvarible_1.Language.TranditionalChinese, "基要真理");
+                    break;
                 }
             case "spirital":
                 {
                     this.titles.set(globalvarible_1.Language.English, "");
                     this.titles.set(globalvarible_1.Language.SimplifyChinese, "基督徒的属灵经历");
                     this.titles.set(globalvarible_1.Language.TranditionalChinese, "基督徒的屬靈經歷");
+                    break;
                 }
             case "matthew":
                 {
                     this.titles.set(globalvarible_1.Language.English, "");
                     this.titles.set(globalvarible_1.Language.SimplifyChinese, "马太福音");
                     this.titles.set(globalvarible_1.Language.TranditionalChinese, "馬太福音");
+                    break;
                 }
             case "Genesis":
                 {
                     this.titles.set(globalvarible_1.Language.English, "");
                     this.titles.set(globalvarible_1.Language.SimplifyChinese, "创世纪");
                     this.titles.set(globalvarible_1.Language.TranditionalChinese, "創世紀");
+                    break;
                 }
             case "Christ_in_Prophesy":
                 {
                     this.titles.set(globalvarible_1.Language.English, "");
                     this.titles.set(globalvarible_1.Language.SimplifyChinese, "预言中的基督");
                     this.titles.set(globalvarible_1.Language.TranditionalChinese, "預言中的基督");
+                    break;
                 }
             case "Heavenly_Vision":
                 {
                     this.titles.set(globalvarible_1.Language.English, "");
                     this.titles.set(globalvarible_1.Language.SimplifyChinese, "天上的异象");
                     this.titles.set(globalvarible_1.Language.TranditionalChinese, "天上的異象");
+                    break;
                 }
             case "Principle_of_God's_Work":
                 {
                     this.titles.set(globalvarible_1.Language.English, "");
                     this.titles.set(globalvarible_1.Language.SimplifyChinese, "神作工的原则");
                     this.titles.set(globalvarible_1.Language.TranditionalChinese, "神作工的原則");
+                    break;
                 }
             case "The_Kingdom_of_Priests":
                 {
                     this.titles.set(globalvarible_1.Language.English, "");
                     this.titles.set(globalvarible_1.Language.SimplifyChinese, "祭司的国度");
                     this.titles.set(globalvarible_1.Language.TranditionalChinese, "祭司的國度");
+                    break;
                 }
         }
         this.LoadData();
@@ -102,8 +110,7 @@ var VideoListComponent = /** @class */ (function (_super) {
         }
         this.currentmessagetitle = this.titles.get(globalvarible_1.GlobalVariable.language);
         var fileName = "../../files/biblestudy/Bible_Study_" + this.source + filesuffix + ".json";
-        console.log(fileName);
-        this.jsonLoadService.getMessageItems(fileName).subscribe(function (response) {
+        this.jsonLoadService.getMessageWithNotesItems(fileName).subscribe(function (response) {
             _this.messagedata = response;
             _this.messagedata.forEach(function (file) {
                 file.hasaudio = file.mp3file != "";
@@ -123,11 +130,4 @@ var VideoListComponent = /** @class */ (function (_super) {
     return VideoListComponent;
 }(webpartbase_1.WebPartBase));
 exports.VideoListComponent = VideoListComponent;
-var VideoItemWithNotes = /** @class */ (function (_super) {
-    __extends(VideoItemWithNotes, _super);
-    function VideoItemWithNotes() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    return VideoItemWithNotes;
-}(globalvarible_1.VideoOfWorship));
 //# sourceMappingURL=videolist.component.js.map

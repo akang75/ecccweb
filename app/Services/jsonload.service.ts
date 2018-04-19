@@ -3,8 +3,7 @@ import {Http, Headers, RequestOptions, Response } from '@angular/http';
 import {Observable, Subject} from 'rxjs/Rx';  
 import 'rxjs/Rx'; //get everything from Rx    
 import 'rxjs/add/operator/toPromise';  
-import {IVerseItem } from '../Shared/globalvarible';  
-import { MessageItem } from '../Components/MessagePage/archivedmessage';
+import {IVerseItem, VideoOfWorship, VideoItemWithNotes } from '../Shared/globalvarible';  
 
 @Injectable()  
 export class JsonLoadService {  
@@ -17,11 +16,17 @@ export class JsonLoadService {
     }
     
     //    
-    getMessageItems(jsonUrl:string): Observable < MessageItem[] > {  
+    getMessageItems(jsonUrl:string): Observable < VideoOfWorship[] > {  
         return this.http.get(jsonUrl).map((response: Response) => {  
-            return <MessageItem[] > response.json()  
+            return <VideoOfWorship[] > response.json()  
         }).catch(this.handleError);  
     }  
+
+    getMessageWithNotesItems(jsonUrl:string): Observable < VideoItemWithNotes[] > {  
+        return this.http.get(jsonUrl).map((response: Response) => {  
+            return <VideoItemWithNotes[] > response.json()  
+        }).catch(this.handleError);  
+    } 
     //    
     private handleError(errorResponse: Response) {  
         console.log(errorResponse);  
