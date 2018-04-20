@@ -96,6 +96,20 @@ export class VideoListComponent extends WebPartBase{
                 this.titles.set(Language.TranditionalChinese, "福音晚會");
                 break;
             }
+            case "workship":
+            {
+                this.titles.set(Language.English, "Workship sharing");
+                this.titles.set(Language.SimplifyChinese, "事工分享");
+                this.titles.set(Language.TranditionalChinese, "事工分享");
+                break;
+            }
+            case "retreat":
+            {
+                this.titles.set(Language.English, "Summer Retreat");
+                this.titles.set(Language.SimplifyChinese, "夏令会");
+                this.titles.set(Language.TranditionalChinese, "夏令會");
+                break;
+            }
         }
 
          this.LoadData();

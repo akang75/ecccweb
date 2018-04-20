@@ -103,6 +103,20 @@ var VideoListComponent = /** @class */ (function (_super) {
                     this.titles.set(globalvarible_1.Language.TranditionalChinese, "福音晚會");
                     break;
                 }
+            case "workship":
+                {
+                    this.titles.set(globalvarible_1.Language.English, "Workship sharing");
+                    this.titles.set(globalvarible_1.Language.SimplifyChinese, "事工分享");
+                    this.titles.set(globalvarible_1.Language.TranditionalChinese, "事工分享");
+                    break;
+                }
+            case "retreat":
+                {
+                    this.titles.set(globalvarible_1.Language.English, "Summer Retreat");
+                    this.titles.set(globalvarible_1.Language.SimplifyChinese, "夏令会");
+                    this.titles.set(globalvarible_1.Language.TranditionalChinese, "夏令會");
+                    break;
+                }
         }
         this.LoadData();
     };
