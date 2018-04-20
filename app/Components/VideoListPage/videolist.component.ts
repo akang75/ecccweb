@@ -89,6 +89,13 @@ export class VideoListComponent extends WebPartBase{
                 this.titles.set(Language.TranditionalChinese, "祭司的國度");
                 break;
             }
+            case "Gospel":
+            {
+                this.titles.set(Language.English, "Gospel Meeting");
+                this.titles.set(Language.SimplifyChinese, "福音晚会");
+                this.titles.set(Language.TranditionalChinese, "福音晚會");
+                break;
+            }
         }
 
          this.LoadData();
@@ -107,7 +114,7 @@ export class VideoListComponent extends WebPartBase{
         }
         this.currentmessagetitle = this.titles.get(GlobalVariable.language);
 
-        var fileName = "../../files/biblestudy/Bible_Study_"+ this.source + filesuffix + ".json";
+        var fileName = "../../files/videometadatafile/"+ this.source + filesuffix + ".json";
        
         this.jsonLoadService.getMessageWithNotesItems(fileName).subscribe(response => {
             this.messagedata = response;
@@ -115,6 +122,8 @@ export class VideoListComponent extends WebPartBase{
                 file.hasaudio = file.mp3file != "";
                 file.hasvideo = file.mp4file != "";
                 file.hasnote = file.noteurl != "";
+                file.hasspeaker = file.speaker != "";
+                file.hasdate = file.date != "";
             })
         });
     }

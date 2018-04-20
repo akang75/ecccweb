@@ -96,6 +96,13 @@ var VideoListComponent = /** @class */ (function (_super) {
                     this.titles.set(globalvarible_1.Language.TranditionalChinese, "祭司的國度");
                     break;
                 }
+            case "Gospel":
+                {
+                    this.titles.set(globalvarible_1.Language.English, "Gospel Meeting");
+                    this.titles.set(globalvarible_1.Language.SimplifyChinese, "福音晚会");
+                    this.titles.set(globalvarible_1.Language.TranditionalChinese, "福音晚會");
+                    break;
+                }
         }
         this.LoadData();
     };
@@ -109,13 +116,15 @@ var VideoListComponent = /** @class */ (function (_super) {
             filesuffix = "_en";
         }
         this.currentmessagetitle = this.titles.get(globalvarible_1.GlobalVariable.language);
-        var fileName = "../../files/biblestudy/Bible_Study_" + this.source + filesuffix + ".json";
+        var fileName = "../../files/videometadatafile/" + this.source + filesuffix + ".json";
         this.jsonLoadService.getMessageWithNotesItems(fileName).subscribe(function (response) {
             _this.messagedata = response;
             _this.messagedata.forEach(function (file) {
                 file.hasaudio = file.mp3file != "";
                 file.hasvideo = file.mp4file != "";
                 file.hasnote = file.noteurl != "";
+                file.hasspeaker = file.speaker != "";
+                file.hasdate = file.date != "";
             });
         });
     };

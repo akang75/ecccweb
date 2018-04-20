@@ -54,14 +54,17 @@ var GlobalVariable = /** @class */ (function () {
 }());
 exports.GlobalVariable = GlobalVariable;
 var VideoOfWorship = /** @class */ (function () {
-    function VideoOfWorship(mp4file, mp3file, title, length, speaker) {
+    function VideoOfWorship(mp4file, mp3file, title, length, speaker, date) {
         this.mp4file = mp4file;
         this.mp3file = mp3file;
         this.title = title;
         this.length = length;
         this.speaker = speaker;
+        this.date = date;
         this.hasaudio = this.mp3file != "";
         this.hasvideo = this.mp4file != "";
+        this.hasspeaker = this.speaker != "";
+        this.hasdate = this.date != "";
     }
     return VideoOfWorship;
 }());
