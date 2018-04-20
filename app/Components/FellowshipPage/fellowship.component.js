@@ -29,10 +29,11 @@ var FellowshipComponent = /** @class */ (function (_super) {
         return _super.call(this, languageService) || this;
     }
     FellowshipComponent.prototype.ngOnInit = function () {
-        this.Baptisms = [new globalvarible_1.ImageIcon("/images/Event/080712_Street_fair_TN.jpg", "2008/07/12", "http://sdrv.ms/QglqqE", "sdsf"),
-            new globalvarible_1.ImageIcon("/images/Event/100710_Street_fair_TN.jpg", "2010/07/10", "http://sdrv.ms/QglmqE", ""),
-            new globalvarible_1.ImageIcon("/images/Event/1107090_Street_fair_TN.jpg", "2011/07/09", "http://sdrv.ms/QglkPz", ""),
-            new globalvarible_1.ImageIcon("/images/Event/120714_street_fair_TN.jpg", "2012/08/17", "http://sdrv.ms/MDoRFg", "")
+        this.Baptisms = [new globalvarible_1.ImageIcon("/images/Event/Baptism071715-tn.jpg", "07/17/15", "http://1drv.ms/1fUBWLw", ""),
+            new globalvarible_1.ImageIcon("/images/Event/Baptism120514-tn.jpg", "12/5/14", "http://1drv.ms/1BpFEoe", ""),
+            new globalvarible_1.ImageIcon("/images/Event/baptism20130628_TN.jpg", "6/28/2013", "http://sdrv.ms/11RfPvc", ""),
+            new globalvarible_1.ImageIcon("/images/Event/baptism20130215_TN.jpg", "2/15/2013", "http://sdrv.ms/Y0lLip", ""),
+            new globalvarible_1.ImageIcon("/images/Event/baptism20121109_TN.jpg", "11/9/2012", "http://sdrv.ms/Q7i4Xp", "")
         ];
     };
     FellowshipComponent = __decorate([
