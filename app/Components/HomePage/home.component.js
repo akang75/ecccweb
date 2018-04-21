@@ -30,39 +30,50 @@ var HomeComponent = /** @class */ (function (_super) {
         var _this = _super.call(this, languageService) || this;
         _this.jsonLoadService = jsonLoadService;
         _this.todaydate = "";
-        _this.morningvideofile = "";
-        _this.morningaudiofile = "";
-        _this.afternoonvideofile = "";
-        _this.afternoonaudiofile = "";
         return _this;
     }
     HomeComponent.prototype.ngOnInit = function () {
         this.verseItem = { text: "", from: "", version: "" };
-        this.fileNames = new Map();
-        this.fileNames.set(globalvarible_1.Language.English, "../../files/Goden_Verse_en.json");
-        this.fileNames.set(globalvarible_1.Language.SimplifyChinese, "../../files/Goden_Verse_si.json");
-        this.fileNames.set(globalvarible_1.Language.TranditionalChinese, "../../files/Goden_Verse_tr.json");
+        this.versefileNames = new Map();
+        this.versefileNames.set(globalvarible_1.Language.English, "../../files/Goden_Verse_en.json");
+        this.versefileNames.set(globalvarible_1.Language.SimplifyChinese, "../../files/Goden_Verse_si.json");
+        this.versefileNames.set(globalvarible_1.Language.TranditionalChinese, "../../files/Goden_Verse_tr.json");
+        this.messageFileNames = new Map();
+        this.messageFileNames.set(globalvarible_1.Language.English, "../../files/worships/morning/2018_en.json");
+        this.messageFileNames.set(globalvarible_1.Language.SimplifyChinese, "../../files/worships/morning/2018_si.json");
+        this.messageFileNames.set(globalvarible_1.Language.TranditionalChinese, "../../files/worships/morning/2018_tr.json");
         this.titles.set(globalvarible_1.Language.English, "Daily Verse");
         this.titles.set(globalvarible_1.Language.SimplifyChinese, "每日金句");
         this.titles.set(globalvarible_1.Language.TranditionalChinese, "每日金句");
-        this.titleen = globalvarible_1.GlobalVariable.messagetitleen + " - " + globalvarible_1.GlobalVariable.speakeren;
-        this.titlesi = globalvarible_1.GlobalVariable.messagetitlesi + " - " + globalvarible_1.GlobalVariable.speakersi;
-        this.titletr = globalvarible_1.GlobalVariable.messagetitletr + " - " + globalvarible_1.GlobalVariable.speakertr;
+        this.afternoonmessage = new globalvarible_1.VideoOfWorship("", "", "", "", "", "");
+        this.morningmessage = new globalvarible_1.VideoOfWorship("", "", "", "", "", "");
         this.todaydate = globalvarible_1.GlobalVariable.todaydate;
-        this.afternoonvideofile = "Videos/English_Worship/18/" + globalvarible_1.GlobalVariable.afternoonmessagefilename + ".mp3";
-        this.afternoonaudiofile = "/mp3/Worship/18/" + globalvarible_1.GlobalVariable.afternoonmessagefilename + ".mp3";
-        this.morningvideofile = "Videos/Chinese_Worship/18/" + globalvarible_1.GlobalVariable.morningmessagefilename + ".mp4";
-        this.morningaudiofile = "/mp3/Worship/18/" + globalvarible_1.GlobalVariable.morningmessagefilename + ".mp3";
         this.LoadData();
     };
     HomeComponent.prototype.LoadData = function () {
         var _this = this;
-        var fileName = this.fileNames.get(globalvarible_1.GlobalVariable.language);
+        var fileName = this.versefileNames.get(globalvarible_1.GlobalVariable.language);
         this.title = this.titles.get(globalvarible_1.GlobalVariable.language);
         this.jsonLoadService.getVerseItems(fileName).subscribe(function (response) {
             _this.versedata = response;
             var index = Math.floor(Math.random() * (response.length + 1));
             _this.verseItem = response[index];
+        });
+        this.LoadLatestMessage();
+    };
+    HomeComponent.prototype.LoadLatestMessage = function () {
+        var _this = this;
+        var messageFile = this.messageFileNames.get(globalvarible_1.GlobalVariable.language);
+        if (globalvarible_1.GlobalVariable.language == globalvarible_1.Language.English) {
+            var fileName = "../../files/worships/afternoon/2018_en.json";
+            this.jsonLoadService.getMessageItems(fileName).subscribe(function (response) {
+                _this.afternoonmessagedata = response;
+                _this.afternoonmessage = _this.afternoonmessagedata[0];
+            });
+        }
+        this.jsonLoadService.getMessageItems(messageFile).subscribe(function (response) {
+            _this.messagedata = response;
+            _this.morningmessage = _this.messagedata[0];
         });
     };
     HomeComponent = __decorate([

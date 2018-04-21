@@ -23,48 +23,40 @@ var core_1 = require("@angular/core");
 var globalvarible_1 = require("../../Shared/globalvarible");
 var webpartbase_1 = require("../../Shared/webpartbase");
 var language_service_1 = require("../../Services/language.service");
+var jsonload_service_1 = require("../../Services/jsonload.service");
 var MessageComponent = /** @class */ (function (_super) {
     __extends(MessageComponent, _super);
     //#endregion
-    function MessageComponent(languageService) {
+    function MessageComponent(languageService, jsonLoadService) {
         var _this = _super.call(this, languageService) || this;
-        _this.todaydate = "";
-        _this.morningvideofile = "";
-        _this.morningaudiofile = "";
-        _this.afternoonvideofile = "";
-        _this.afternoonaudiofile = "";
+        _this.jsonLoadService = jsonLoadService;
         return _this;
     }
     MessageComponent.prototype.ngOnInit = function () {
         //#region 主日信息
-        this.afternoonvideofile = "Videos/English_Worship/18/" + globalvarible_1.GlobalVariable.afternoonmessagefilename + ".mp3";
-        this.afternoonaudiofile = "/mp3/Worship/18/" + globalvarible_1.GlobalVariable.afternoonmessagefilename + ".mp3";
-        this.morningvideofile = "Videos/Chinese_Worship/18/" + globalvarible_1.GlobalVariable.morningmessagefilename + ".mp4";
-        this.morningaudiofile = "/mp3/Worship/18/" + globalvarible_1.GlobalVariable.morningmessagefilename + ".mp3";
-        this.currentmessagetitle = "";
-        this.date = globalvarible_1.GlobalVariable.todaydate;
         this.showhistoryfile = false;
         this.iconfilename = "expand.png";
         this.messagetitles = new Map();
         this.messagetitles.set(globalvarible_1.Language.English, "Latest Sunday Message");
         this.messagetitles.set(globalvarible_1.Language.SimplifyChinese, "最新主日信息");
         this.messagetitles.set(globalvarible_1.Language.TranditionalChinese, "最新主日信息");
-        this.informations = new Map();
-        this.informations.set(globalvarible_1.Language.English, [new globalvarible_1.VideoOfWorship(this.morningvideofile, this.morningaudiofile, globalvarible_1.GlobalVariable.messagetitleen, "1:0:20", globalvarible_1.GlobalVariable.speakeren),
-            new globalvarible_1.VideoOfWorship(this.afternoonvideofile, this.afternoonaudiofile, globalvarible_1.GlobalVariable.afternoonmessagetitle, "0:44:15", globalvarible_1.GlobalVariable.afternoonspeaker)]);
-        this.informations.set(globalvarible_1.Language.SimplifyChinese, [new globalvarible_1.VideoOfWorship(this.morningvideofile, this.morningaudiofile, globalvarible_1.GlobalVariable.messagetitlesi, "1:0:20", globalvarible_1.GlobalVariable.speakersi)]);
-        this.informations.set(globalvarible_1.Language.TranditionalChinese, [new globalvarible_1.VideoOfWorship(this.morningvideofile, this.morningaudiofile, globalvarible_1.GlobalVariable.messagetitletr, "1:0:20", globalvarible_1.GlobalVariable.speakertr)]);
         this.historytitles = new Map();
         this.historytitles.set(globalvarible_1.Language.English, "Archived Messages");
         this.historytitles.set(globalvarible_1.Language.SimplifyChinese, "其它主日信息");
         this.historytitles.set(globalvarible_1.Language.TranditionalChinese, "其它主日信息");
+        this.afternoonmessage = new globalvarible_1.VideoOfWorship("", "", "", "", "", "");
+        this.morningmessage = new globalvarible_1.VideoOfWorship("", "", "", "", "", "");
+        this.messageFileNames = new Map();
+        this.messageFileNames.set(globalvarible_1.Language.English, "../../files/worships/morning/2018_en.json");
+        this.messageFileNames.set(globalvarible_1.Language.SimplifyChinese, "../../files/worships/morning/2018_si.json");
+        this.messageFileNames.set(globalvarible_1.Language.TranditionalChinese, "../../files/worships/morning/2018_tr.json");
         //#endregion
         this.LoadData();
     };
     MessageComponent.prototype.LoadData = function () {
         this.currentmessagetitle = this.messagetitles.get(globalvarible_1.GlobalVariable.language);
-        this.currentinformation = this.informations.get(globalvarible_1.GlobalVariable.language);
         this.currenthistorytitle = this.historytitles.get(globalvarible_1.GlobalVariable.language);
+        this.LoadLatestMessage();
     };
     MessageComponent.prototype.ToggleHistory = function () {
         this.showhistoryfile = !this.showhistoryfile;
@@ -75,13 +67,28 @@ var MessageComponent = /** @class */ (function (_super) {
             this.iconfilename = "expand.png";
         }
     };
+    MessageComponent.prototype.LoadLatestMessage = function () {
+        var _this = this;
+        var messageFile = this.messageFileNames.get(globalvarible_1.GlobalVariable.language);
+        if (globalvarible_1.GlobalVariable.language == globalvarible_1.Language.English) {
+            var fileName = "../../files/worships/afternoon/2018_en.json";
+            this.jsonLoadService.getMessageItems(fileName).subscribe(function (response) {
+                _this.afternoonmessagedata = response;
+                _this.afternoonmessage = _this.afternoonmessagedata[0];
+            });
+        }
+        this.jsonLoadService.getMessageItems(messageFile).subscribe(function (response) {
+            _this.messagedata = response;
+            _this.morningmessage = _this.messagedata[0];
+        });
+    };
     MessageComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'message',
             templateUrl: "message.component.html"
         }),
-        __metadata("design:paramtypes", [language_service_1.LanguageService])
+        __metadata("design:paramtypes", [language_service_1.LanguageService, jsonload_service_1.JsonLoadService])
     ], MessageComponent);
     return MessageComponent;
 }(webpartbase_1.WebPartBase));

@@ -6,24 +6,26 @@
                         <div class="content" *ngIf="isenglish">
                             <h3>Welcome to ECCC website</h3>
                             <p>Address：3615 164th Place SE, Bellevue, WA 98008, USA. Tel: 425-747-0889</p>
-                            <p>Latest Message: {{titleen}} 
-                                <a href="{{morningvideofile}}"><img class="fontsizebutton" src="images/play.png"/></a> 
-                                &nbsp;<a href="{{morningaudiofile}}"><img class="fontsizebutton" src="images/playaudio.png"/></a></p>
+                            <p>Latest Morning Message: {{morningmessage.title}} - {{morningmessage.speaker}}
+                                <a target="_blank" href="{{morningmessage.mp4file}}"><img class="fontsizebutton" src="images/play.png"/></a> 
+                                &nbsp;<a target="_blank" href="{{morningmessage.mp3file}}"><img class="fontsizebutton" src="images/playaudio.png"/></a></p>
+                            <p>Latest afternoon Message: {{afternoonmessage.title}} - {{afternoonmessage.speaker}}
+                                <a target="_blank" href="{{afternoonmessage.mp4file}}"><img class="fontsizebutton" src="images/play.png"/></a> 
+                                &nbsp;<a target="_blank" href="{{afternoonmessage.mp3file}}"><img class="fontsizebutton" src="images/playaudio.png"/></a></p>
                         </div>
                         <div class="content" *ngIf="issimplifychinese">
                             <h3>欢迎来到东区基督教会</h3>
                             <p>地址：3615 164th Place SE, Bellevue, WA 98008, USA. 电话: 425-747-0889</p>
-                            <p>最新信息：{{titlesi}} 
-                                <a href="{{morningvideofile}}"><img class="fontsizebutton" src="images/play.png"/></a>
-                                &nbsp;<a href={{morningaudiofile}}><img class="fontsizebutton" src="images/playaudio.png"/></a></p>
+                            <p>最新信息：{{morningmessage.title}} - {{morningmessage.speaker}}
+                                <a target="_blank" href="{{morningmessage.mp4file}}"><img class="fontsizebutton" src="images/play.png"/></a> 
+                                &nbsp;<a target="_blank" href="{{morningmessage.mp3file}}"><img class="fontsizebutton" src="images/playaudio.png"/></a></p>
                         </div>
                         <div class="content" *ngIf="istraditionalchinese">
                             <h3>歡迎來到東區基督教會</h3>
                             <p>地址：3615 164th Place SE, Bellevue, WA 98008, USA. 電話: 425-747-0889</p>
-                            <p>最新信息：{{titletr}} 
-                                <a href="{{morningvideofile}}"><img class="fontsizebutton" src="images/play.png"/></a>
-                                &nbsp;<a href="{{morningaudiofile}}"><img class="fontsizebutton" src="images/playaudio.png"/></a></p>
-                        </div>
+                            <p>最新信息：{{morningmessage.title}} - {{morningmessage.speaker}}
+                                <a target="_blank" href="{{morningmessage.mp4file}}"><img class="fontsizebutton" src="images/play.png"/></a> 
+                                &nbsp;<a target="_blank" href="{{morningmessage.mp3file}}"><img class="fontsizebutton" src="images/playaudio.png"/></a></p>     </div>
                         <div class="content" >
                                 <imagegallery></imagegallery>
                         </div>
