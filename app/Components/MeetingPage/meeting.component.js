@@ -25,12 +25,9 @@ var language_service_1 = require("../../Services/language.service");
 var MeetingComponent = /** @class */ (function (_super) {
     __extends(MeetingComponent, _super);
     function MeetingComponent(languageService) {
-        var _this = _super.call(this, languageService) || this;
-        console.log(_this.isenglish);
-        return _this;
+        return _super.call(this, languageService) || this;
     }
     MeetingComponent.prototype.ngOnInit = function () {
-        console.log(this.isenglish);
         this.churchenglish = {
             headerRow: ['Meeting', 'Date and Time'],
             dataRows: [

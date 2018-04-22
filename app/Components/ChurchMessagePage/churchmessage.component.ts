@@ -31,6 +31,13 @@ export class ChurchMessageComponent extends WebPartBase{
     currentgospelletter:string;
 //#endregion
 
+//#region  VBS
+    vbstitles :Map<Language, string>;
+    vbsmessages :Map<Language, string>;
+    currentvbsltitle:string;
+    currentvbsmessage:string;
+//#endregion
+
     constructor(languageService : LanguageService)
     {
         super(languageService);
@@ -83,18 +90,14 @@ export class ChurchMessageComponent extends WebPartBase{
         
 //#endregion
 
-//#region 
+//#region gospel invitation
         this.gospeltitles = new Map<Language, string>();
         this.gospeltitles.set(Language.English, "Gospel Invitation");
         this.gospeltitles.set(Language.SimplifyChinese, "福音晚会邀请函");
         this.gospeltitles.set(Language.TranditionalChinese, "福音晚會邀請函");
 
         this.gospelletters = new Map<Language, string>();
-        this.gospelletters.set(Language.English, `
-        Hello<br/>
-
-        Hello
-        `);
+        this.gospelletters.set(Language.English, "");
 
         this.gospelletters.set(Language.SimplifyChinese, `
         <p>亲爱的朋友:</p>
@@ -110,6 +113,7 @@ export class ChurchMessageComponent extends WebPartBase{
         3615 164th PL. SE, 
         Bellevue, WA 98008
         </p>
+        <p><a href="/images/event/GospelNight042118.jpg">福音单张</a></p>
         `);
         this.gospelletters.set(Language.TranditionalChinese, `
         <p>亲爱的朋友:</p>
@@ -125,9 +129,32 @@ export class ChurchMessageComponent extends WebPartBase{
         3615 164th PL. SE, 
         Bellevue, WA 98008
         </p>
+        <p><a href="/images/event/GospelNight042118.jpg">福音單張</a>
         `);
 //#endregion
-        
+
+//region vbs
+        this.vbstitles = new Map<Language, string>();
+        this.vbstitles.set(Language.English, "Gospel Invitation");
+        this.vbstitles.set(Language.SimplifyChinese, "2018 假期圣经学校");
+        this.vbstitles.set(Language.TranditionalChinese, "2018 假期聖經學校");
+
+        this.vbsmessages = new Map<Language, string>();
+        this.vbsmessages.set(Language.English, "");
+
+        this.vbsmessages.set(Language.SimplifyChinese, `
+       		<p>2018年暑期圣经学校订在八月六日至八月十日举行。主题是「船沉了：耶稣拯救」。欢迎家里有四岁到十二岁孩童（幼儿园到六年级学生）的父母报名参加，报名费每人$15。</p>
+			<br/>
+			<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSeeojKpwqbE-6pUM9Uvt9dHR0Fm5z3HPtfmZkG3nFYpk8U0hA/viewform?c=0&w=1" target="_blank">网上报名</a></p>
+			<p><a href="http://tinyurl.com/ECCC2018VBS" target="_blank">下载报名表</a></p>
+        `);
+        this.vbsmessages.set(Language.TranditionalChinese, `
+            <p>2018年暑期聖經學校訂在八月六日至八月十日舉行。主題是「船沉了：耶穌拯救」。歡迎家裡有四歲到十二歲孩童（幼兒園到六年級學生）的父母報名參加，報名費每人$15。</p>
+            <br/>
+            <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSeeojKpwqbE-6pUM9Uvt9dHR0Fm5z3HPtfmZkG3nFYpk8U0hA/viewform?c=0&w=1" target="_blank">網上報名</a></p>
+            <p><a href="http://tinyurl.com/ECCC2018VBS" target="_blank">下載報名表</a></p>
+         `);
+//#endregion
         this.LoadData();
         
     }
@@ -142,6 +169,9 @@ export class ChurchMessageComponent extends WebPartBase{
 
         this.currentgospeltitle = this.gospeltitles.get(GlobalVariable.language);
         this.currentgospelletter = this.gospelletters.get(GlobalVariable.language);
+
+        this.currentvbsltitle = this.vbstitles.get(GlobalVariable.language);
+        this.currentvbsmessage = this.vbsmessages.get(GlobalVariable.language);
     }
 
 }

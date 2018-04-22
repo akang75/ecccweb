@@ -26,11 +26,9 @@ export class MeetingComponent extends WebPartBase {
     constructor(languageService : LanguageService)
     {
         super(languageService);
-        console.log(this.isenglish);
     }
 
   ngOnInit() {
-    console.log(this.isenglish);
       this.churchenglish = {
           headerRow: [ 'Meeting', 'Date and Time'],
           dataRows: [
