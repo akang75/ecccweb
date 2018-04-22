@@ -30,20 +30,20 @@ export class MisctopicComponent extends WebPartBase{
         this.classes.set(Language.English, [{title:"Gospel Meeting", routingparamenter:"Gospel", imagepath : "topic.png"},
                                             {title:"Workship sharing", routingparamenter:"workship", imagepath : "topic.png"},
                                             {title:"Summer Retreat", routingparamenter:"retreat", imagepath : "topic.png"},
-                                            {title:"Sharing", routingparamenter:"sharing", imagepath : "topic.png"},
-                                            {title:"Growing Kids God's Way", routingparamenter:"growkids", imagepath : "topic.png"}
+                                           // {title:"Sharing", routingparamenter:"sharing", imagepath : "topic.png"},
+                                           // {title:"Growing Kids God's Way", routingparamenter:"growkids", imagepath : "topic.png"}
                                             ]);
         this.classes.set(Language.SimplifyChinese, [{title:"福音晚會", routingparamenter:"Gospel", imagepath : "topic.png"},
                                             {title:"事工分享", routingparamenter:"workship",imagepath :"topic.png"},
                                             {title:"夏令会", routingparamenter:"retreat", imagepath : "topic.png"},
-                                            {title:"見证分享", routingparamenter:"mathew", imagepath : "topic.png"},
-                                            {title:"按照神的方式教育孩子", routingparamenter:"growkids", imagepath : "topic.png"}
+                                           // {title:"見证分享", routingparamenter:"mathew", imagepath : "topic.png"},
+                                           // {title:"按照神的方式教育孩子", routingparamenter:"growkids", imagepath : "topic.png"}
                                             ]);
         this.classes.set(Language.TranditionalChinese, [{title:"福音晚会", routingparamenter:"Gospel", imagepath : "topic.png"},
                                             {title:"事工分享", routingparamenter:"workship",imagepath :"topic.png"},
                                             {title:"夏令會", routingparamenter:"retreat", imagepath : "topic.png"},
-                                            {title:"见證分享", routingparamenter:"mathew", imagepath : "topic.png"},
-                                            {title:"按照神的方式教育孩子", routingparamenter:"growkids", imagepath : "topic.png"}
+                                           // {title:"见證分享", routingparamenter:"mathew", imagepath : "topic.png"},
+                                           // {title:"按照神的方式教育孩子", routingparamenter:"growkids", imagepath : "topic.png"}
                                             ]);
         this.LoadData();
     }
