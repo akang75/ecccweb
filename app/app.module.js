@@ -20,7 +20,6 @@ var meeting_component_1 = require("./Components/MeetingPage/meeting.component");
 var navbar_component_1 = require("./Components/navbar.component");
 var photogallery_component_1 = require("./Components/HomePage/photogallery.component");
 var about_component_1 = require("./Components/AboutPage/about.component");
-var godword_component_1 = require("./Components/GodWordPage/godword.component");
 var gospel_component_1 = require("./Components/GospelPage/gospel.component");
 var fellowship_component_1 = require("./Components/FellowshipPage/fellowship.component");
 var archivedmessage_1 = require("./Components/MessagePage/archivedmessage");
@@ -35,7 +34,6 @@ var appRoutes = [
     { path: 'ChurchMessage', component: churchmessage_component_1.ChurchMessageComponent },
     { path: 'About', component: about_component_1.AboutComponent },
     { path: 'Message', component: message_component_1.MessageComponent },
-    { path: 'GodWord', component: godword_component_1.GodWordComponent },
     { path: 'Gospel', component: gospel_component_1.GospelComponent },
     { path: 'Fellowship', component: fellowship_component_1.FellowshipComponent },
     { path: 'ClassVideo', component: videolist_component_1.VideoListComponent }
@@ -54,7 +52,6 @@ var AppModule = /** @class */ (function () {
                 topnav_component_1.TopNavComponent,
                 photogallery_component_1.PhotoGalleryComponent,
                 about_component_1.AboutComponent,
-                godword_component_1.GodWordComponent,
                 gospel_component_1.GospelComponent,
                 fellowship_component_1.FellowshipComponent,
                 archivedmessage_1.ArchivedMessageComponent,

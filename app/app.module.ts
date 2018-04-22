@@ -12,7 +12,6 @@ import { MeetingComponent } from './Components/MeetingPage/meeting.component';
 import { NavbarComponent } from './Components/navbar.component';
 import { PhotoGalleryComponent } from './Components/HomePage/photogallery.component';
 import { AboutComponent } from './Components/AboutPage/about.component';
-import { GodWordComponent } from './Components/GodWordPage/godword.component';
 import { GospelComponent } from './Components/GospelPage/gospel.component';
 import { FellowshipComponent } from './Components/FellowshipPage/fellowship.component';
 import { ArchivedMessageComponent } from './Components/MessagePage/archivedmessage';
@@ -28,7 +27,6 @@ const appRoutes: Routes = [
   { path: 'ChurchMessage', component:ChurchMessageComponent},
   { path: 'About', component: AboutComponent},
   { path: 'Message', component: MessageComponent },
-  { path: 'GodWord', component: GodWordComponent },
   { path: 'Gospel', component: GospelComponent},
   { path:'Fellowship', component:FellowshipComponent},
   { path: 'ClassVideo', component: VideoListComponent}
@@ -44,7 +42,6 @@ const appRoutes: Routes = [
                   TopNavComponent, 
                   PhotoGalleryComponent,
                   AboutComponent,
-                  GodWordComponent,
                   GospelComponent,
                   FellowshipComponent,
                   ArchivedMessageComponent,
