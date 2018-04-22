@@ -23,6 +23,7 @@ export class ArchivedMessageComponent extends WebPartBase{
 
     ngOnInit()
     {
+        this.timeofdate = "morning";
         this.currentyear = "2018";
         this.LoadData();
     }

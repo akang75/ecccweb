@@ -32,6 +32,7 @@ var ArchivedMessageComponent = /** @class */ (function (_super) {
         return _this;
     }
     ArchivedMessageComponent.prototype.ngOnInit = function () {
+        this.timeofdate = "morning";
         this.currentyear = "2018";
         this.LoadData();
     };
