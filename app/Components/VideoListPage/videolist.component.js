@@ -61,6 +61,27 @@ var VideoListComponent = /** @class */ (function (_super) {
                     this.titles.set(globalvarible_1.Language.TranditionalChinese, "馬太福音");
                     break;
                 }
+            case "mark":
+                {
+                    this.titles.set(globalvarible_1.Language.English, "");
+                    this.titles.set(globalvarible_1.Language.SimplifyChinese, "马可福音");
+                    this.titles.set(globalvarible_1.Language.TranditionalChinese, "馬可福音");
+                    break;
+                }
+            case "Colossians":
+                {
+                    this.titles.set(globalvarible_1.Language.English, "");
+                    this.titles.set(globalvarible_1.Language.SimplifyChinese, "歌罗西书");
+                    this.titles.set(globalvarible_1.Language.TranditionalChinese, "歌羅西書");
+                    break;
+                }
+            case "john":
+                {
+                    this.titles.set(globalvarible_1.Language.English, "");
+                    this.titles.set(globalvarible_1.Language.SimplifyChinese, "約翰福音");
+                    this.titles.set(globalvarible_1.Language.TranditionalChinese, "約翰福音");
+                    break;
+                }
             case "Genesis":
                 {
                     this.titles.set(globalvarible_1.Language.English, "");

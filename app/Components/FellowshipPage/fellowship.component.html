@@ -17,11 +17,11 @@
                         <div class="content all-icons">
                             <div class="row">
                                 <div *ngFor="let picture of Baptisms" class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
-                                    <a href="{{picture.onedrivepath}}">
-                                        <div target="_blank" class="font-icon-detail">
+                                    <a  target="_blank" href="{{picture.onedrivepath}}">
+                                        <div class="font-icon-detail">
                                             <p><img alt="street fair thumbnail picture" src="{{picture.imagepath}}" class="imageicon" /></p>
                                             <input type="text" value="{{picture.date}}" class="cursor">
-                                            &nbsp;<a *ngIf="picture.hasvideo" href="{{picture.videofilepath}}"><img alt="watch online" src="images/play.png" class="fontsizebutton"/></a>
+                                            &nbsp;<a *ngIf="picture.hasvideo"  target="_blank" href="{{picture.videofilepath}}"><img alt="watch online" src="images/play.png" class="fontsizebutton"/></a>
                                         </div>
                                     </a>
                                 </div>
