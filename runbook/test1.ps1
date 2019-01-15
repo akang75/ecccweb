@@ -1,1 +1,1 @@
-echo 'hello two'
+write-output 'hello two'
